@@ -1,0 +1,7 @@
+$tablet-breakpoint: 757px;
+
+@mixin tablet{
+    @media (min-width: $tablet-breakpoint) {
+        @content;        
+    }
+}

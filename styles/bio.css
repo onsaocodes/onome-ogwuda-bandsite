@@ -1,9 +1,21 @@
 .nav {
+  background-color: #323232;
   display: flex;
   justify-content: space-between;
-  background-color: #323232;
+  align-items: center;
+  flex-direction: column;
 }
-.nav__logo-link {
-  text-decoration: none;
-  color: red;
+@media (min-width: 757px) {
+  .nav {
+    flex-direction: row;
+  }
+}
+.nav__list {
+  list-style-type: none;
+}
+.nav__list-item {
+  color: white;
+}
+.nav__list-item--active {
+  border-bottom: 3px solid white;
 }/*# sourceMappingURL=bio.css.map */

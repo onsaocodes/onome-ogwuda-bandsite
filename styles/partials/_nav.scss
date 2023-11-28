@@ -1,12 +1,28 @@
-@use "./variables" as *;
+@use "./variables.scss" as *;
+@use "./breakpoints.scss" as *;
 
 .nav{
+    background-color: $primary-background-colour;
     display: flex;
     justify-content: space-between;
-    background-color: $primary-background-colour;
-    
-    &__logo-link{
-        text-decoration: none;
-        color: red;
+    align-items: center;
+    flex-direction: column;
+
+
+    @include tablet{
+        flex-direction: row;
     }
+
+    &__list{
+        list-style-type: none;
+    }
+
+    &__list-item{        
+        color: $primary-text-colour;
+    }
+
+    &__list-item--active{
+        border-bottom: 3px solid $primary-text-colour;
+    }
+
 }
