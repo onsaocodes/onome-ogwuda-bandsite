@@ -1,0 +1,12 @@
+@use "./variables" as *;
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary-background-colour;
+    
+    &__logo-link{
+        text-decoration: none;
+        color: red;
+    }
+}

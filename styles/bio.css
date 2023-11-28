@@ -1,1 +1,9 @@
-/*# sourceMappingURL=bio.css.map */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #323232;
+}
+.nav__logo-link {
+  text-decoration: none;
+  color: red;
+}/*# sourceMappingURL=bio.css.map */
