@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+.hero{
+    background-image: url(../../assets/images/hero-bio.jpg);
+    background-size: cover;
+    background-position: center;
+    color: $primary-text-colour;
+}
