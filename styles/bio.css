@@ -18,4 +18,15 @@
 }
 .nav__list-item--active {
   border-bottom: 3px solid white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }/*# sourceMappingURL=bio.css.map */

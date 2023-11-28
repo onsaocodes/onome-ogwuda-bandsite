@@ -1,5 +1,5 @@
-@use "./variables.scss" as *;
-@use "./breakpoints.scss" as *;
+@use "./variables" as *;
+@use "./breakpoints" as *;
 
 .nav{
     background-color: $primary-background-colour;
