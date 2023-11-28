@@ -4,21 +4,30 @@
 .nav{
     background-color: $primary-background-colour;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    padding: 24px 16px 16px 16px;
+    color: $primary-text-colour;
 
 
     @include tablet{
         flex-direction: row;
     }
 
+    &__logo{
+        align-self: center;
+    }
+
     &__list{
         list-style-type: none;
+       display: flex;
+       align-content: center;
+        justify-content: space-evenly;
+        align-self:stretch; 
     }
 
     &__list-item{        
-        color: $primary-text-colour;
+        text-align: center;
     }
 
     &__list-item--active{
