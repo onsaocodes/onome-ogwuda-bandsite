@@ -3,6 +3,15 @@
 .hero{
     background-image: url(../../assets/images/hero-bio.jpg);
     background-size: cover;
-    background-position: center;
-    color: $primary-text-colour;
+    // background: $primary-background-colour;
+    // opacity: 50%;
+    // display: block;
+
+    &__heading{
+        background-color: rgba($color: $primary-background-colour, $alpha: 0.5);
+        color: $primary-font-colour;
+        font-family: Avenir Next;
+        font-weight: 700;
+        padding: 9rem 2rem;
+    }
 }
