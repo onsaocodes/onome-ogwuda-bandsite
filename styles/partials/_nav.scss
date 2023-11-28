@@ -6,32 +6,36 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 24px 16px 16px 16px;
     color: $primary-text-colour;
-
 
     @include tablet{
         flex-direction: row;
     }
 
     &__logo{
+        padding-top: 2rem;
         align-self: center;
+    }
+
+    &__bar{
+        padding-top: 1rem;
     }
 
     &__list{
         list-style-type: none;
-       display: flex;
-       align-content: center;
-        justify-content: space-evenly;
-        align-self:stretch; 
+        display: flex;
+        padding: 0;
+        margin: 0;
     }
 
     &__list-item{        
         text-align: center;
+        padding-bottom: 1rem;
+        flex: 50%;
     }
 
     &__list-item--active{
-        border-bottom: 3px solid $primary-text-colour;
+        border-bottom: 0.3rem solid $primary-text-colour;
     }
 
 }
