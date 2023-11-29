@@ -1,17 +1,11 @@
 @use "./variables" as *;
+@use "./mixins" as *;
+
 
 .hero{
-    background-image: url(../../assets/images/hero-bio.jpg);
-    background-size: cover;
-    // background: $primary-background-colour;
-    // opacity: 50%;
-    // display: block;
+    @include hero-styling;
 
     &__heading{
-        background-color: rgba($color: $primary-background-colour, $alpha: 0.5);
-        color: $primary-font-colour;
-        font-family: Avenir Next;
-        font-weight: 700;
-        padding: 9rem 2rem;
+        padding: $padding-16px;
     }
 }
