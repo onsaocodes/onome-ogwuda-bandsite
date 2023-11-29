@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+@mixin font ($font-size, $line-height, $font-weight){
+    font-family: $font;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    
+}
+
+@mixin nav-footer-styling{
+    background-color: $primary-background-colour;
+    color: $secondary-font-colour;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    @include font(1.5rem, 2rem, 600)
+}
+
