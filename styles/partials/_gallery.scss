@@ -19,6 +19,10 @@
     }
   }
 
+  @include desktop {
+    padding-left: 7rem;
+  }
+
   &__img {
     width: 100%;
     @include mobile-spacing-top;
@@ -29,11 +33,13 @@
     }
 
     @include desktop {
-      width: 25%;
+      width: 33%;
     }
   }
 
   &__end-img {
-    padding-right: 0rem;
+    @include tablet {
+      // padding-right: 0rem;
+    }
   }
 }

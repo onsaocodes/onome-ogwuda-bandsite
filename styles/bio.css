@@ -12,6 +12,11 @@
     padding-left: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .nav {
+    padding-left: 5rem;
+  }
+}
 .nav__logo {
   padding-top: 1rem;
   align-self: center;
@@ -58,6 +63,7 @@
     border-bottom: 0.3rem solid white;
   }
 }
+
 .hero {
   background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../assets/images/hero-bio.jpg);
   background-size: cover;
@@ -85,9 +91,10 @@
 }
 @media (min-width: 1280px) {
   .hero__heading {
-    padding: 0 auto;
+    padding-left: 5rem;
   }
 }
+
 .musicians {
   padding: 1.5rem 1rem 1rem 1rem;
 }
@@ -107,6 +114,11 @@
     color: #323232;
   }
 }
+@media (min-width: 1280px) {
+  .musicians__header {
+    padding: 3rem 0 3rem 3rem;
+  }
+}
 .musicians__image {
   padding-top: 1rem;
   font-family: Avenir Next;
@@ -118,6 +130,11 @@
 @media (min-width: 768px) {
   .musicians__image {
     padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__image {
+    padding: 0 7rem;
   }
 }
 .musicians__picture {
@@ -152,9 +169,20 @@
     padding: 1rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .musicians__subheader {
+    padding-left: 7rem;
+    padding-bottom: 0;
+  }
+}
 @media (min-width: 768px) {
   .musicians__text-container {
     display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__text-container {
+    padding-left: 5rem;
   }
 }
 .musicians__main-text {
@@ -198,6 +226,11 @@
     color: #323232;
   }
 }
+@media (min-width: 1280px) {
+  .gallery {
+    padding-left: 7rem;
+  }
+}
 .gallery__img {
   width: 100%;
   padding-top: 1rem;
@@ -210,13 +243,9 @@
 }
 @media (min-width: 1280px) {
   .gallery__img {
-    width: 25%;
+    width: 33%;
   }
 }
-.gallery__end-img {
-  padding-right: 0rem;
-}
-
 .footer {
   background-color: #323232;
   color: #afafaf;
@@ -228,6 +257,12 @@
 @media (min-width: 768px) {
   .footer {
     padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 }
 .footer__head {

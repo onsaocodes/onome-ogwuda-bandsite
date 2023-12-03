@@ -10,6 +10,11 @@
     @include tablet-section-padding;
   }
 
+  @include desktop {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
   &__head {
     padding-top: $padding-24px;
     @include font(1.5rem, 2rem, 700, $primary-color-white);
@@ -58,7 +63,6 @@
     @include tablet {
       padding-top: $padding-16px;
       display: flex;
-      // justify-content: space-between;
       @include font(0.875rem, 1.25rem, 400, $primary-color-white);
     }
   }

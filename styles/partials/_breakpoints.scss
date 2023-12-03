@@ -9,7 +9,6 @@ $desktop-breakpoint: 1280px;
 
 @mixin desktop {
   @media (min-width: $desktop-breakpoint) {
-    @include tablet;
     @content;
   }
 }

@@ -11,6 +11,10 @@
     padding-left: $padding-36px;
   }
 
+  @include desktop {
+    padding-left: 5rem;
+  }
+
   &__logo {
     @include mobile-spacing-top;
     align-self: center;
@@ -23,16 +27,12 @@
 
   &__bar {
     @include mobile-spacing-top;
-    @include tablet {
-    }
   }
 
   &__list {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    @include tablet {
-    }
   }
 
   &__list-item {

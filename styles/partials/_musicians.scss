@@ -10,6 +10,9 @@
     @include tablet {
       @include tablet-subheader;
     }
+    @include desktop {
+      padding: 3rem 0 3rem 3rem;
+    }
   }
 
   &__image {
@@ -17,6 +20,9 @@
     @include font(0.875rem, 1.375rem, 600, $primary-color-black);
     @include tablet {
       @include tablet-section-padding;
+    }
+    @include desktop {
+      padding: 0 7rem;
     }
   }
 
@@ -42,11 +48,18 @@
     @include tablet {
       @include tablet-section-padding;
     }
+    @include desktop {
+      padding-left: 7rem;
+      padding-bottom: 0;
+    }
   }
 
   &__text-container {
     @include tablet {
       display: flex;
+    }
+    @include desktop {
+      padding-left: 5rem;
     }
   }
 
