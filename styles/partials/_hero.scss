@@ -11,5 +11,9 @@
       padding-left: $padding-36px;
       @include font(3.75rem, 4.25rem, 700, $primary-color-white);
     }
+
+    @include desktop {
+      padding: 0 auto;
+    }
   }
 }

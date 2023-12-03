@@ -74,6 +74,11 @@
     color: white;
   }
 }
+@media (min-width: 1280px) {
+  .hero__heading {
+    padding: 0 auto;
+  }
+}
 
 .musicians {
   padding: 1.5rem 1rem 1rem 1rem;
