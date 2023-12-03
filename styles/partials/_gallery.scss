@@ -6,6 +6,7 @@
   @include mobile-section-padding;
   display: flex;
   flex-wrap: wrap;
+  background-color: $secondary-color-alabaster;
 
   @include tablet {
     @include tablet-section-padding;
