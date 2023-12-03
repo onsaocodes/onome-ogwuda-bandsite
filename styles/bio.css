@@ -8,6 +8,8 @@
 @media (min-width: 768px) {
   .nav {
     flex-direction: row;
+    justify-content: unset;
+    padding-left: 2.25rem;
   }
 }
 .nav__logo {
@@ -18,6 +20,7 @@
   .nav__logo {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 .nav__bar {
@@ -31,6 +34,7 @@
 .nav__list-item {
   text-align: center;
   padding-top: 1rem;
+  flex: 50%;
   font-family: Avenir Next;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -39,8 +43,8 @@
 }
 @media (min-width: 768px) {
   .nav__list-item {
-    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
   }
 }
 .nav__list-item--active {
@@ -48,7 +52,12 @@
   color: white;
   font-weight: 600;
 }
-
+@media (min-width: 1280px) {
+  .nav__list-item:hover {
+    color: white;
+    border-bottom: 0.3rem solid white;
+  }
+}
 .hero {
   background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../assets/images/hero-bio.jpg);
   background-size: cover;

@@ -7,6 +7,8 @@
 
   @include tablet {
     flex-direction: row;
+    justify-content: unset;
+    padding-left: $padding-36px;
   }
 
   &__logo {
@@ -15,6 +17,7 @@
     @include tablet {
       @include tablet-spacing-top;
       @include tablet-spacing-bottom;
+      margin-right: $padding-24px;
     }
   }
 
@@ -35,24 +38,24 @@
   &__list-item {
     text-align: center;
     @include mobile-spacing-top;
+    flex: 50%;
     @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
     @include tablet {
-      @include tablet-spacing-top;
       @include tablet-spacing-bottom;
+      margin-right: $padding-24px;
     }
   }
 
-  // For hover links, and tablet/desktop change width of active link
   &__list-item--active {
     border-bottom: 0.3rem solid $primary-color-white;
     color: $primary-color-white;
     font-weight: 600;
   }
 
-  // &__list-item--hover:hover {
-  //   @include desktop {
-  //     color: $font-colour;
-  //     border-bottom: 0.3rem solid $font-colour;
-  //   }
-  // }
+  &__list-item:hover {
+    @include desktop {
+      color: $primary-color-white;
+      border-bottom: 0.3rem solid $primary-color-white;
+    }
+  }
 }
