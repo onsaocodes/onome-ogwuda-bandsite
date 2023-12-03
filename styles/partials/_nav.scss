@@ -28,7 +28,7 @@
         text-align: center;
         padding-bottom: $padding-16px;
         flex: 50%;
-        @include font(1.5rem, 2rem, 400);
+        @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
     }
 
     // For hover links, and tablet/desktop change width of active link

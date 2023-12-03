@@ -1,18 +1,17 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+.gallery {
+  @include section-padding;
+  display: flex;
+  flex-wrap: wrap;
 
-.gallery{
-    @include section-padding;
-    display: flex;
-    flex-wrap: wrap;
+  &__header {
+    @include subheader;
+  }
 
-    &__header{
-        @include subheader;
-    }
-
-    &__img{
-        width: 100%;
-        @include default-spacing;
-    }
+  &__img {
+    width: 100%;
+    @include default-spacing-top;
+  }
 }
