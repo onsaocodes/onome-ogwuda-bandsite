@@ -1,16 +1,23 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "./breakpoints" as *;
 
 .musicians {
-  @include section-padding;
+  @include mobile-section-padding;
 
   &__header {
-    @include subheader;
+    @include mobile-subheader;
+    @include tablet {
+      @include tablet-subheader;
+    }
   }
 
   &__image {
     padding-top: $padding-16px;
     @include font(0.875rem, 1.375rem, 600, $primary-color-black);
+    @include tablet {
+      @include tablet-section-padding;
+    }
   }
 
   &__picture {
@@ -20,15 +27,34 @@
   &__image-caption {
     @include mobile-spacing-top;
     @include font(0.875rem, 1.125rem, 600, $primary-color-black);
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__vocalist {
+    padding-top: 0.5rem;
   }
 
   &__subheader {
     @include mobile-spacing-top;
     @include font(0.875rem, 1.375rem, 600, $primary-color-black);
+    @include tablet {
+      @include tablet-section-padding;
+    }
+  }
+
+  &__text-container {
+    @include tablet {
+      display: flex;
+    }
   }
 
   &__main-text {
     @include mobile-spacing-top;
     @include font(0.812rem, 1.125rem, 400, $primary-color-black);
+    @include tablet {
+      @include tablet-section-padding;
+    }
   }
 }
