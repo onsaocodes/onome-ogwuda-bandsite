@@ -1,17 +1,34 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "./breakpoints" as *;
 
 .gallery {
-  @include section-padding;
+  @include mobile-section-padding;
   display: flex;
   flex-wrap: wrap;
 
+  @include tablet {
+    @include tablet-section-padding;
+  }
+
   &__header {
-    @include subheader;
+    @include mobile-subheader;
+    @include tablet {
+      @include tablet-subheader;
+    }
   }
 
   &__img {
     width: 100%;
     @include mobile-spacing-top;
+
+    @include tablet {
+      width: 32%;
+      padding-right: $padding-24px;
+    }
+
+    // @include desktop {
+    //   width: 25%;
+    // }
   }
 }
