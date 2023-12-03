@@ -1,11 +1,11 @@
 @use "./variables" as *;
 
-@mixin font ($font-size, $line-height, $font-weight){
+@mixin font ($font-size, $line-height, $font-weight, $font-color){
     font-family: $font;
     font-size: $font-size;
     line-height: $line-height;
     font-weight: $font-weight;
-    color: $seconday-color-mercury;    
+    color: $font-color;    
 }
 
 @mixin nav-footer-styling{
@@ -16,12 +16,24 @@
     flex-direction: column;
 }
 
-// @mixin hero-styling{
-//     background: linear-gradient(0deg, rgba($color: $primary-background-colour, $alpha: 0.5), rgba($color: $primary-background-colour, $alpha: 0.5)), url(../../assets/images/hero-bio.jpg);
-//     background-size: cover;
-//     height: 50vh;
-//     display: flex;
-//     align-items: center;
-//     @include font(1.5rem, 2rem, 600);
-// }
+@mixin hero-styling{
+    background: linear-gradient(0deg, rgba($color: $primary-color-black, $alpha: 0.5), rgba($color: $primary-color-black, $alpha: 0.5)), url(../../assets/images/hero-bio.jpg);
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    @include font(1.5rem, 2rem, 600, $primary-color-white);
+}
+
+@mixin default-spacing{
+    padding-top: $padding-16px;
+}
+
+@mixin section-padding{
+    padding: $padding-24px $padding-16px $padding-16px $padding-16px;
+}
+
+@mixin subheader{
+    @include font(1.5rem, 2rem, 700, $primary-color-black);
+}
 
