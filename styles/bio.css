@@ -208,6 +208,14 @@
     padding-right: 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .gallery__img {
+    width: 25%;
+  }
+}
+.gallery__end-img {
+  padding-right: 0rem;
+}
 
 .footer {
   background-color: #323232;
@@ -274,12 +282,21 @@
   .footer__contacts-container {
     padding-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    font-family: Avenir Next;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: white;
   }
 }
 .footer__contact {
   padding-bottom: 1rem;
   margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__contact {
+    margin-right: 1.5rem;
+  }
 }
 .footer__name {
   font-family: Avenir Next;

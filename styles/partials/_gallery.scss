@@ -28,8 +28,12 @@
       padding-right: $padding-24px;
     }
 
-    // @include desktop {
-    //   width: 25%;
-    // }
+    @include desktop {
+      width: 25%;
+    }
+  }
+
+  &__end-img {
+    padding-right: 0rem;
   }
 }

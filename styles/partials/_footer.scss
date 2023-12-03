@@ -58,13 +58,17 @@
     @include tablet {
       padding-top: $padding-16px;
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
+      @include font(0.875rem, 1.25rem, 400, $primary-color-white);
     }
   }
 
   &__contact {
     @include mobile-spacing-bottom;
     margin-right: $padding-16px;
+    @include tablet {
+      margin-right: $padding-24px;
+    }
   }
 
   &__name {
