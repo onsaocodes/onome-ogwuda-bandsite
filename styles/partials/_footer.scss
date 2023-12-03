@@ -1,0 +1,66 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+
+.footer {
+  @include nav-footer-styling;
+  padding: 0 $padding-16px;
+  display: flex;
+
+  &__socials {
+    padding-top: $padding-24px;
+    @include font(1.5rem, 2rem, 700, $primary-color-white);
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+    @include default-spacing-bottom;
+  }
+
+  &__link {
+    justify-content: space-around;
+  }
+
+  &__header {
+    @include default-spacing-bottom;
+  }
+
+  &__contact {
+    @include default-spacing-bottom;
+  }
+
+  &__name {
+    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+  }
+
+  &__company {
+    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+    @include default-spacing-bottom;
+  }
+
+  &__address,
+  &__role {
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+    @include default-spacing-bottom;
+  }
+
+  &__email {
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+  }
+
+  &__capitals {
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    padding-top: $padding-24px;
+    @include default-spacing-bottom;
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+  }
+
+  &__copyright {
+    @include default-spacing-top;
+    @include default-spacing-bottom;
+  }
+}
