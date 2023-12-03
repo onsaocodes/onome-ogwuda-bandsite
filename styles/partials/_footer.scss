@@ -32,7 +32,6 @@
   }
 
   &__tablet-logo {
-    @include mobile-spacing-bottom;
     visibility: hidden;
     @include tablet {
       visibility: visible;
@@ -42,7 +41,6 @@
 
   &__header {
     @include mobile-spacing-bottom;
-    margin-right: $padding-16px;
   }
 
   &__contacts-container {

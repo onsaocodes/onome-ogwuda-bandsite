@@ -231,7 +231,6 @@
   justify-content: space-around;
 }
 .footer__tablet-logo {
-  padding-bottom: 1rem;
   visibility: hidden;
 }
 @media (min-width: 768px) {
@@ -242,7 +241,6 @@
 }
 .footer__header {
   padding-bottom: 1rem;
-  margin-right: 1rem;
 }
 @media (min-width: 768px) {
   .footer__contacts-container {
