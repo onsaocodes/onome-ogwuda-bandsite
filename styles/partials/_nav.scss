@@ -22,20 +22,19 @@
     &__list{
         list-style-type: none;
         display: flex;
-        padding: 0;
-        margin: 0;
     }
 
     &__list-item{        
         text-align: center;
         padding-bottom: $padding-16px;
         flex: 50%;
-        color: $secondary-font-colour;
-        font-weight: 400;
+        @include font(1.5rem, 2rem, 400);
     }
 
+    // For hover links, and tablet/desktop change width of active link
     &__list-item--active{
-        border-bottom: 0.3rem solid $font-colour;
+        border-bottom: 0.3rem solid $primary-color-white;
+        color: $primary-color-white;
         font-weight: 600;
     }
 
