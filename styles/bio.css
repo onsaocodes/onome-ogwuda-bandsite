@@ -175,6 +175,7 @@
   padding: 1.5rem 1rem 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
+  background-color: #fafafa;
 }
 @media (min-width: 768px) {
   .gallery {
@@ -221,7 +222,7 @@
     padding: 1rem 2.25rem;
   }
 }
-.footer__socials {
+.footer__head {
   padding-top: 1.5rem;
   font-family: Avenir Next;
   font-size: 1.5rem;
@@ -230,9 +231,16 @@
   color: white;
 }
 @media (min-width: 768px) {
-  .footer__socials {
+  .footer__head {
     display: flex;
     justify-content: space-between;
+    align-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .footer__head-container {
+    display: flex;
+    gap: 1.5rem;
   }
 }
 .footer__links {
@@ -240,15 +248,22 @@
   gap: 1.5rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .footer__links {
+    align-self: flex-start;
+  }
+}
 .footer__link {
   justify-content: space-around;
 }
 .footer__tablet-logo {
   visibility: hidden;
+  display: none;
 }
 @media (min-width: 768px) {
   .footer__tablet-logo {
     visibility: visible;
+    display: block;
     padding-bottom: 2.25rem;
   }
 }
@@ -325,6 +340,7 @@
 @media (min-width: 768px) {
   .footer__mobile-logo {
     visibility: hidden;
+    display: none;
   }
 }
 
