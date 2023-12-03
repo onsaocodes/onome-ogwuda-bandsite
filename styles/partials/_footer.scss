@@ -15,7 +15,7 @@
   &__links {
     display: flex;
     gap: 1.5rem;
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
   }
 
   &__link {
@@ -23,11 +23,11 @@
   }
 
   &__header {
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
   }
 
   &__contact {
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
   }
 
   &__name {
@@ -36,13 +36,13 @@
 
   &__company {
     @include font(0.812rem, 1.125rem, 600, $primary-color-white);
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
   }
 
   &__address,
   &__role {
     @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
   }
 
   &__email {
@@ -55,12 +55,12 @@
 
   &__logo {
     padding-top: $padding-24px;
-    @include default-spacing-bottom;
+    @include mobile-spacing-bottom;
     @include font(0.812rem, 1.125rem, 400, $primary-color-white);
   }
 
   &__copyright {
-    @include default-spacing-top;
-    @include default-spacing-bottom;
+    @include mobile-spacing-top;
+    @include mobile-spacing-bottom;
   }
 }

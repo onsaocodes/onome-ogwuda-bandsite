@@ -18,17 +18,17 @@
   }
 
   &__image-caption {
-    @include default-spacing-top;
+    @include mobile-spacing-top;
     @include font(0.875rem, 1.125rem, 600, $primary-color-black);
   }
 
   &__subheader {
-    @include default-spacing-top;
+    @include mobile-spacing-top;
     @include font(0.875rem, 1.375rem, 600, $primary-color-black);
   }
 
   &__main-text {
-    @include default-spacing-top;
+    @include mobile-spacing-top;
     @include font(0.812rem, 1.125rem, 400, $primary-color-black);
   }
 }

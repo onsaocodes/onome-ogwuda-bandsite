@@ -30,11 +30,11 @@
   @include font(1.5rem, 2rem, 600, $primary-color-white);
 }
 
-@mixin default-spacing-top {
+@mixin mobile-spacing-top {
   padding-top: $padding-16px;
 }
 
-@mixin default-spacing-bottom {
+@mixin mobile-spacing-bottom {
   padding-bottom: $padding-16px;
 }
 
