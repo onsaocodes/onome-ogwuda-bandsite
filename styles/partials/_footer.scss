@@ -5,29 +5,57 @@
 .footer {
   @include nav-footer-styling;
   padding: 0 $padding-16px;
-  display: flex;
+
+  @include tablet {
+    @include tablet-section-padding;
+  }
 
   &__socials {
     padding-top: $padding-24px;
     @include font(1.5rem, 2rem, 700, $primary-color-white);
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__links {
     display: flex;
     gap: 1.5rem;
     @include mobile-spacing-bottom;
+    @include tablet {
+    }
   }
 
   &__link {
     justify-content: space-around;
   }
 
+  &__tablet-logo {
+    @include mobile-spacing-bottom;
+    visibility: hidden;
+    @include tablet {
+      visibility: visible;
+      padding-bottom: $padding-36px;
+    }
+  }
+
   &__header {
     @include mobile-spacing-bottom;
+    margin-right: $padding-16px;
+  }
+
+  &__contacts-container {
+    @include tablet {
+      padding-top: $padding-16px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__contact {
     @include mobile-spacing-bottom;
+    margin-right: $padding-16px;
   }
 
   &__name {
@@ -57,10 +85,22 @@
     padding-top: $padding-24px;
     @include mobile-spacing-bottom;
     @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__copyright {
     @include mobile-spacing-top;
     @include mobile-spacing-bottom;
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__mobile-logo {
+    @include tablet {
+      visibility: hidden;
+    }
   }
 }

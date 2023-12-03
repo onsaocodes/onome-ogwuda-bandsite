@@ -1,13 +1,24 @@
 .nav {
   background-color: #323232;
-  color: #AFAFAF;
+  color: #afafaf;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+  }
+}
 .nav__logo {
   padding-top: 1rem;
   align-self: center;
+}
+@media (min-width: 768px) {
+  .nav__logo {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 .nav__bar {
   padding-top: 1rem;
@@ -15,16 +26,22 @@
 .nav__list {
   list-style-type: none;
   display: flex;
+  justify-content: space-around;
 }
 .nav__list-item {
   text-align: center;
-  padding-bottom: 1rem;
-  flex: 50%;
+  padding-top: 1rem;
   font-family: Avenir Next;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 400;
-  color: #E1E1E1;
+  color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .nav__list-item {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 .nav__list-item--active {
   border-bottom: 0.3rem solid white;
@@ -47,6 +64,16 @@
 .hero__heading {
   padding-left: 1rem;
 }
+@media (min-width: 768px) {
+  .hero__heading {
+    padding-left: 2.25rem;
+    font-family: Avenir Next;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+    color: white;
+  }
+}
 
 .musicians {
   padding: 1.5rem 1rem 1rem 1rem;
@@ -58,6 +85,15 @@
   font-weight: 700;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .musicians__header {
+    font-family: Avenir Next;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    color: #323232;
+  }
+}
 .musicians__image {
   padding-top: 1rem;
   font-family: Avenir Next;
@@ -65,6 +101,11 @@
   line-height: 1.375rem;
   font-weight: 600;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__image {
+    padding: 1rem 2.25rem;
+  }
 }
 .musicians__picture {
   width: 100%;
@@ -77,6 +118,14 @@
   font-weight: 600;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .musicians__image-caption {
+    padding-top: 0;
+  }
+}
+.musicians__vocalist {
+  padding-top: 0.5rem;
+}
 .musicians__subheader {
   padding-top: 1rem;
   font-family: Avenir Next;
@@ -84,6 +133,16 @@
   line-height: 1.375rem;
   font-weight: 600;
   color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__subheader {
+    padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .musicians__text-container {
+    display: flex;
+  }
 }
 .musicians__main-text {
   padding-top: 1rem;
@@ -93,11 +152,21 @@
   font-weight: 400;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .musicians__main-text {
+    padding: 1rem 2.25rem;
+  }
+}
 
 .gallery {
   padding: 1.5rem 1rem 1rem 1rem;
   display: flex;
   flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .gallery {
+    padding: 1rem 2.25rem;
+  }
 }
 .gallery__header {
   font-family: Avenir Next;
@@ -106,19 +175,38 @@
   font-weight: 700;
   color: #323232;
 }
+@media (min-width: 768px) {
+  .gallery__header {
+    font-family: Avenir Next;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    color: #323232;
+  }
+}
 .gallery__img {
   width: 100%;
   padding-top: 1rem;
 }
+@media (min-width: 768px) {
+  .gallery__img {
+    width: 32%;
+    padding-right: 1.5rem;
+  }
+}
 
 .footer {
   background-color: #323232;
-  color: #AFAFAF;
+  color: #afafaf;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   padding: 0 1rem;
-  display: flex;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 1rem 2.25rem;
+  }
 }
 .footer__socials {
   padding-top: 1.5rem;
@@ -128,6 +216,12 @@
   font-weight: 700;
   color: white;
 }
+@media (min-width: 768px) {
+  .footer__socials {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .footer__links {
   display: flex;
   gap: 1.5rem;
@@ -136,11 +230,30 @@
 .footer__link {
   justify-content: space-around;
 }
+.footer__tablet-logo {
+  padding-bottom: 1rem;
+  visibility: hidden;
+}
+@media (min-width: 768px) {
+  .footer__tablet-logo {
+    visibility: visible;
+    padding-bottom: 2.25rem;
+  }
+}
 .footer__header {
   padding-bottom: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__contacts-container {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .footer__contact {
   padding-bottom: 1rem;
+  margin-right: 1rem;
 }
 .footer__name {
   font-family: Avenir Next;
@@ -184,9 +297,24 @@
   font-weight: 400;
   color: white;
 }
+@media (min-width: 768px) {
+  .footer__logo {
+    padding: 0;
+  }
+}
 .footer__copyright {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer__mobile-logo {
+    visibility: hidden;
+  }
 }
 
 @font-face {

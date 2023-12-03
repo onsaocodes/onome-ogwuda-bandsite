@@ -2,46 +2,57 @@
 @use "./breakpoints" as *;
 @use "./mixins" as *;
 
+.nav {
+  @include nav-footer-styling;
 
-.nav{ 
-    @include nav-footer-styling;
+  @include tablet {
+    flex-direction: row;
+  }
 
-    // @include tablet{
-    //     flex-direction: row;
-    // }
-
-    &__logo{
-        padding-top: $padding-16px;
-        align-self: center;
+  &__logo {
+    @include mobile-spacing-top;
+    align-self: center;
+    @include tablet {
+      @include tablet-spacing-top;
+      @include tablet-spacing-bottom;
     }
+  }
 
-    &__bar{
-        padding-top: $padding-16px;
+  &__bar {
+    @include mobile-spacing-top;
+    @include tablet {
     }
+  }
 
-    &__list{
-        list-style-type: none;
-        display: flex;
+  &__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    @include tablet {
     }
+  }
 
-    &__list-item{        
-        text-align: center;
-        padding-bottom: $padding-16px;
-        flex: 50%;
-        @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
+  &__list-item {
+    text-align: center;
+    @include mobile-spacing-top;
+    @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
+    @include tablet {
+      @include tablet-spacing-top;
+      @include tablet-spacing-bottom;
     }
+  }
 
-    // For hover links, and tablet/desktop change width of active link
-    &__list-item--active{
-        border-bottom: 0.3rem solid $primary-color-white;
-        color: $primary-color-white;
-        font-weight: 600;
-    }
+  // For hover links, and tablet/desktop change width of active link
+  &__list-item--active {
+    border-bottom: 0.3rem solid $primary-color-white;
+    color: $primary-color-white;
+    font-weight: 600;
+  }
 
-    // &__list-item--hover:hover{
-    //     @include desktop{
-    //         color: $font-colour;
-    //         border-bottom: 0.3rem solid $font-colour;
-    //     }
-    // }
+  // &__list-item--hover:hover {
+  //   @include desktop {
+  //     color: $font-colour;
+  //     border-bottom: 0.3rem solid $font-colour;
+  //   }
+  // }
 }

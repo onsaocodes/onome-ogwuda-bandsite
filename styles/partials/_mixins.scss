@@ -38,10 +38,26 @@
   padding-bottom: $padding-16px;
 }
 
-@mixin section-padding {
+@mixin tablet-spacing-top {
+  padding-top: $padding-24px;
+}
+
+@mixin tablet-spacing-bottom {
+  padding-bottom: $padding-24px;
+}
+
+@mixin mobile-section-padding {
   padding: $padding-24px $padding-16px $padding-16px $padding-16px;
 }
 
-@mixin subheader {
+@mixin mobile-subheader {
   @include font(1.5rem, 2rem, 700, $primary-color-black);
+}
+
+@mixin tablet-section-padding {
+  padding: $padding-16px $padding-36px;
+}
+
+@mixin tablet-subheader {
+  @include font(2.25rem, 2.75rem, 700, $primary-color-black);
 }
