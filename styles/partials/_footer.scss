@@ -3,7 +3,11 @@
 @use "./mixins" as *;
 
 .footer {
-  @include nav-footer-styling;
+  background-color: $primary-color-black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
   padding: 0 $padding-16px;
 
   @include tablet {
@@ -16,8 +20,8 @@
   }
 
   &__head {
-    padding-top: $padding-24px;
-    @include font(1.5rem, 2rem, 700, $primary-color-white);
+    padding-top: $mobile-padding-before-headlines;
+    padding-bottom: $mobile-padding;
     @include tablet {
       display: flex;
       justify-content: space-between;
@@ -35,7 +39,7 @@
   &__links {
     display: flex;
     gap: 1.5rem;
-    @include mobile-spacing-bottom;
+    // @include mobile-spacing-bottom;
     @include tablet {
       align-self: flex-start;
     }
@@ -56,10 +60,13 @@
   }
 
   &__header {
-    @include mobile-spacing-bottom;
+    @include mobile-header($primary-color-white);
+    padding-bottom: $mobile-padding;
   }
 
   &__contacts-container {
+    @include mobile-body;
+    color: $primary-color-white;
     @include tablet {
       padding-top: $padding-16px;
       display: flex;
@@ -68,57 +75,56 @@
   }
 
   &__contact {
-    @include mobile-spacing-bottom;
-    margin-right: $padding-16px;
+    padding-bottom: $mobile-padding;
     @include tablet {
       margin-right: $padding-24px;
     }
   }
 
   &__name {
-    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+    font-family: Avenir-Next-Demi;
   }
 
   &__company {
-    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
-    @include mobile-spacing-bottom;
+    font-family: Avenir-Next-Demi;
+
+    padding-bottom: $mobile-padding;
   }
 
   &__address,
   &__role {
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-    @include mobile-spacing-bottom;
+    padding-bottom: $mobile-padding;
   }
 
   &__email {
     @include font(0.812rem, 1.125rem, 400, $primary-color-white);
   }
 
-  &__capitals {
+  &__company--capitals {
     text-transform: uppercase;
   }
 
   &__logo {
     padding-top: $padding-24px;
-    @include mobile-spacing-bottom;
+    padding-bottom: $mobile-padding;
     @include font(0.812rem, 1.125rem, 400, $primary-color-white);
     @include tablet {
       padding: 0;
     }
   }
 
-  &__copyright {
-    @include mobile-spacing-top;
-    @include mobile-spacing-bottom;
-    @include tablet {
-      padding: 0;
-    }
-  }
-
   &__mobile-logo {
+    padding-bottom: $mobile-padding;
     @include tablet {
       visibility: hidden;
       display: none;
+    }
+  }
+
+  &__copyright {
+    padding-bottom: $mobile-padding;
+    @include tablet {
+      padding: 0;
     }
   }
 }

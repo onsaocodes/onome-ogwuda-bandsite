@@ -3,12 +3,15 @@
 @use "./mixins" as *;
 
 .nav {
-  @include nav-footer-styling;
+  background-color: $primary-color-black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 
   @include tablet {
     flex-direction: row;
     justify-content: unset;
-    padding-left: $padding-36px;
+    padding-left: $padding-default;
   }
 
   @include desktop {
@@ -16,7 +19,7 @@
   }
 
   &__logo {
-    @include mobile-spacing-top;
+    padding-top: $mobile-padding;
     align-self: center;
     @include tablet {
       @include tablet-spacing-top;
@@ -25,11 +28,8 @@
     }
   }
 
-  &__bar {
-    @include mobile-spacing-top;
-  }
-
   &__list {
+    color: $secondary-color-silver;
     list-style-type: none;
     display: flex;
     justify-content: space-around;
@@ -37,7 +37,6 @@
 
   &__list-item {
     text-align: center;
-    @include mobile-spacing-top;
     flex: 50%;
     @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
     @include tablet {
