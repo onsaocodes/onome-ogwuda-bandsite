@@ -1,0 +1,124 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+
+.footer {
+  @include nav-footer-styling;
+  padding: 0 $padding-16px;
+
+  @include tablet {
+    @include tablet-section-padding;
+  }
+
+  @include desktop {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  &__head {
+    padding-top: $padding-24px;
+    @include font(1.5rem, 2rem, 700, $primary-color-white);
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-content: flex-start;
+    }
+  }
+
+  &__head-container {
+    @include tablet {
+      display: flex;
+      gap: $padding-24px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+    @include mobile-spacing-bottom;
+    @include tablet {
+      align-self: flex-start;
+    }
+  }
+
+  &__link {
+    justify-content: space-around;
+  }
+
+  &__tablet-logo {
+    visibility: hidden;
+    display: none;
+    @include tablet {
+      visibility: visible;
+      display: block;
+      padding-bottom: $padding-36px;
+    }
+  }
+
+  &__header {
+    @include mobile-spacing-bottom;
+  }
+
+  &__contacts-container {
+    @include tablet {
+      padding-top: $padding-16px;
+      display: flex;
+      @include font(0.875rem, 1.25rem, 400, $primary-color-white);
+    }
+  }
+
+  &__contact {
+    @include mobile-spacing-bottom;
+    margin-right: $padding-16px;
+    @include tablet {
+      margin-right: $padding-24px;
+    }
+  }
+
+  &__name {
+    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+  }
+
+  &__company {
+    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+    @include mobile-spacing-bottom;
+  }
+
+  &__address,
+  &__role {
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+    @include mobile-spacing-bottom;
+  }
+
+  &__email {
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+  }
+
+  &__capitals {
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    padding-top: $padding-24px;
+    @include mobile-spacing-bottom;
+    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__copyright {
+    @include mobile-spacing-top;
+    @include mobile-spacing-bottom;
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__mobile-logo {
+    @include tablet {
+      visibility: hidden;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./breakpoints" as *;
+
+.gallery {
+  @include mobile-section-padding;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $secondary-color-alabaster;
+
+  @include tablet {
+    @include tablet-section-padding;
+  }
+
+  &__header {
+    @include mobile-subheader;
+    @include tablet {
+      @include tablet-subheader;
+    }
+  }
+
+  @include desktop {
+    padding-left: 7rem;
+  }
+
+  &__img {
+    width: 100%;
+    @include mobile-spacing-top;
+
+    @include tablet {
+      width: 32%;
+      padding-right: $padding-24px;
+    }
+
+    @include desktop {
+      width: 33%;
+    }
+  }
+
+  &__end-img {
+    @include tablet {
+      // padding-right: 0rem;
+    }
+  }
+}

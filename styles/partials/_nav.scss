@@ -1,0 +1,61 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+
+.nav {
+  @include nav-footer-styling;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: unset;
+    padding-left: $padding-36px;
+  }
+
+  @include desktop {
+    padding-left: 5rem;
+  }
+
+  &__logo {
+    @include mobile-spacing-top;
+    align-self: center;
+    @include tablet {
+      @include tablet-spacing-top;
+      @include tablet-spacing-bottom;
+      margin-right: $padding-24px;
+    }
+  }
+
+  &__bar {
+    @include mobile-spacing-top;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__list-item {
+    text-align: center;
+    @include mobile-spacing-top;
+    flex: 50%;
+    @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
+    @include tablet {
+      @include tablet-spacing-bottom;
+      margin-right: $padding-24px;
+    }
+  }
+
+  &__list-item--active {
+    border-bottom: 0.3rem solid $primary-color-white;
+    color: $primary-color-white;
+    font-weight: 600;
+  }
+
+  &__list-item:hover {
+    @include desktop {
+      color: $primary-color-white;
+      border-bottom: 0.3rem solid $primary-color-white;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+@use "./mixins" as *;
+
+.hero {
+  @include hero-styling;
+
+  &__heading {
+    padding-left: $padding-16px;
+    @include tablet {
+      padding-left: $padding-36px;
+      @include font(3.75rem, 4.25rem, 700, $primary-color-white);
+    }
+
+    @include desktop {
+      padding-left: 5rem;
+    }
+  }
+}

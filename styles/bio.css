@@ -1,0 +1,423 @@
+.nav {
+  background-color: #323232;
+  color: #afafaf;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .nav {
+    flex-direction: row;
+    justify-content: unset;
+    padding-left: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav {
+    padding-left: 5rem;
+  }
+}
+.nav__logo {
+  padding-top: 1rem;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .nav__logo {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+.nav__bar {
+  padding-top: 1rem;
+}
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+.nav__list-item {
+  text-align: center;
+  padding-top: 1rem;
+  flex: 50%;
+  font-family: Avenir Next;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .nav__list-item {
+    padding-bottom: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+.nav__list-item--active {
+  border-bottom: 0.3rem solid white;
+  color: white;
+  font-weight: 600;
+}
+@media (min-width: 1280px) {
+  .nav__list-item:hover {
+    color: white;
+    border-bottom: 0.3rem solid white;
+  }
+}
+
+.hero {
+  background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../assets/images/hero-bio.jpg);
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  font-family: Avenir Next;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: white;
+}
+.hero__heading {
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__heading {
+    padding-left: 2.25rem;
+    font-family: Avenir Next;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+    color: white;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__heading {
+    padding-left: 5rem;
+  }
+}
+
+.musicians {
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+.musicians__header {
+  font-family: Avenir Next;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__header {
+    font-family: Avenir Next;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    color: #323232;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__header {
+    padding: 3rem 0 3rem 3rem;
+  }
+}
+.musicians__image {
+  padding-top: 1rem;
+  font-family: Avenir Next;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__image {
+    padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__image {
+    padding: 0 7rem;
+  }
+}
+.musicians__picture {
+  width: 100%;
+}
+.musicians__image-caption {
+  padding-top: 1rem;
+  font-family: Avenir Next;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__image-caption {
+    padding-top: 0;
+  }
+}
+.musicians__vocalist {
+  padding-top: 0.5rem;
+}
+.musicians__subheader {
+  padding-top: 1rem;
+  font-family: Avenir Next;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__subheader {
+    padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__subheader {
+    padding-left: 7rem;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 768px) {
+  .musicians__text-container {
+    display: flex;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__text-container {
+    padding-left: 5rem;
+  }
+}
+.musicians__main-text {
+  padding-top: 1rem;
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .musicians__main-text {
+    padding: 1rem 2.25rem;
+  }
+}
+
+.gallery {
+  padding: 1.5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fafafa;
+}
+@media (min-width: 768px) {
+  .gallery {
+    padding: 1rem 2.25rem;
+  }
+}
+.gallery__header {
+  font-family: Avenir Next;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .gallery__header {
+    font-family: Avenir Next;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    color: #323232;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery {
+    padding-left: 7rem;
+  }
+}
+.gallery__img {
+  width: 100%;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery__img {
+    width: 32%;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery__img {
+    width: 33%;
+  }
+}
+.footer {
+  background-color: #323232;
+  color: #afafaf;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .footer {
+    padding: 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}
+.footer__head {
+  padding-top: 1.5rem;
+  font-family: Avenir Next;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: white;
+}
+@media (min-width: 768px) {
+  .footer__head {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .footer__head-container {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__links {
+    align-self: flex-start;
+  }
+}
+.footer__link {
+  justify-content: space-around;
+}
+.footer__tablet-logo {
+  visibility: hidden;
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__tablet-logo {
+    visibility: visible;
+    display: block;
+    padding-bottom: 2.25rem;
+  }
+}
+.footer__header {
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__contacts-container {
+    padding-top: 1rem;
+    display: flex;
+    font-family: Avenir Next;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: white;
+  }
+}
+.footer__contact {
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__contact {
+    margin-right: 1.5rem;
+  }
+}
+.footer__name {
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+.footer__company {
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 600;
+  color: white;
+  padding-bottom: 1rem;
+}
+.footer__address, .footer__role {
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: white;
+  padding-bottom: 1rem;
+}
+.footer__email {
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: white;
+}
+.footer__capitals {
+  text-transform: uppercase;
+}
+.footer__logo {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-family: Avenir Next;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: white;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    padding: 0;
+  }
+}
+.footer__copyright {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__copyright {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer__mobile-logo {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: Avenir Next;
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf"), url(../../assets/fonts/alternative-files/AvenirNextLTPro.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Avenir Next;
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url(../../assets/fonts/alternative-files/AvenirNextLTProDemi.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: Avenir Next;
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf"), url(../../assets/fonts/alternative-files/AvenirNextLTProBold.ttf);
+  font-weight: 700;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=bio.css.map */
