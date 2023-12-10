@@ -9,32 +9,44 @@
     padding-top: $mobile-padding-before-headlines;
     @include mobile-header($primary-color-black);
     @include tablet {
-      @include tablet-subheader;
+      @include section-header;
+      padding-top: $padding-before-headlines;
     }
     @include desktop {
-      padding: 3rem 0 3rem 3rem;
+      padding-left: auto;
     }
   }
 
   &__image {
     padding: $mobile-padding 0;
     @include tablet {
-      @include tablet-section-padding;
+      padding: $padding-default;
     }
     @include desktop {
-      padding: 0 7rem;
+      padding-left: auto;
+      padding-right: auto;
     }
   }
 
   &__picture {
     width: 100%;
     padding-bottom: $mobile-padding;
+    @include tablet {
+      padding-left: $padding-default;
+      padding-right: $padding-default;
+    }
+
+    @include desktop {
+      padding-left: auto;
+      padding-right: auto;
+    }
   }
 
   &__image-caption {
     font-family: $font-demi;
     @include tablet {
-      padding-top: 0;
+      padding-left: $padding-default;
+      padding-right: $padding-default;
     }
 
     &--name {
@@ -42,24 +54,25 @@
     }
   }
 
+  &__info {
+    @include tablet {
+      padding: 0 $padding-default $padding-default $padding-default;
+    }
+  }
+
   &__subheader {
     padding-bottom: $mobile-padding;
     @include mobile-subheader;
     @include tablet {
-      @include tablet-section-padding;
-    }
-    @include desktop {
-      padding-left: 7rem;
-      padding-bottom: 0;
+      padding-left: $padding-default;
+      @include body;
     }
   }
 
   &__text-container {
     @include tablet {
       display: flex;
-    }
-    @include desktop {
-      padding-left: 5rem;
+      padding: 0 $padding-default;
     }
   }
 
@@ -69,7 +82,7 @@
       padding-bottom: $mobile-padding;
     }
     @include tablet {
-      @include tablet-section-padding;
+      padding: 0 $padding-default 0 0;
     }
   }
 }

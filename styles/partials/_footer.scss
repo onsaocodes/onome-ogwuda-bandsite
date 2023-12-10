@@ -8,10 +8,11 @@
   justify-content: space-evenly;
   flex-direction: column;
 
-  padding: 0 $padding-16px;
+  padding: $mobile-padding-before-headlines $mobile-padding $mobile-padding
+    $mobile-padding;
 
   @include tablet {
-    @include tablet-section-padding;
+    padding: 0 $padding-default;
   }
 
   @include desktop {
@@ -20,33 +21,24 @@
   }
 
   &__head {
-    padding-top: $mobile-padding-before-headlines;
     padding-bottom: $mobile-padding;
     @include tablet {
+      padding-top: $padding-before-headlines;
       display: flex;
       justify-content: space-between;
-      align-content: flex-start;
     }
   }
 
   &__head-container {
     @include tablet {
       display: flex;
-      gap: $padding-24px;
+      justify-content: space-between;
     }
   }
 
   &__links {
     display: flex;
     gap: 1.5rem;
-    // @include mobile-spacing-bottom;
-    @include tablet {
-      align-self: flex-start;
-    }
-  }
-
-  &__link {
-    justify-content: space-around;
   }
 
   &__tablet-logo {
@@ -55,29 +47,31 @@
     @include tablet {
       visibility: visible;
       display: block;
-      padding-bottom: $padding-36px;
+      align-self: flex-start;
     }
   }
 
   &__header {
     @include mobile-header($primary-color-white);
     padding-bottom: $mobile-padding;
+    @include tablet {
+      padding-right: $padding-default;
+    }
   }
 
   &__contacts-container {
     @include mobile-body;
     color: $primary-color-white;
     @include tablet {
-      padding-top: $padding-16px;
       display: flex;
-      @include font(0.875rem, 1.25rem, 400, $primary-color-white);
+      justify-content: space-between;
+      padding-bottom: $mobile-padding;
     }
   }
 
   &__contact {
     padding-bottom: $mobile-padding;
     @include tablet {
-      margin-right: $padding-24px;
     }
   }
 
@@ -96,24 +90,16 @@
     padding-bottom: $mobile-padding;
   }
 
-  &__email {
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-  }
-
   &__company--capitals {
     text-transform: uppercase;
   }
 
   &__logo {
-    padding-top: $padding-24px;
     padding-bottom: $mobile-padding;
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-    @include tablet {
-      padding: 0;
-    }
   }
 
   &__mobile-logo {
+    padding-top: $mobile-padding-before-headlines;
     padding-bottom: $mobile-padding;
     @include tablet {
       visibility: hidden;
@@ -123,8 +109,9 @@
 
   &__copyright {
     padding-bottom: $mobile-padding;
+    color: $primary-color-white;
     @include tablet {
-      padding: 0;
+      // padding-left: $mobile-padding;
     }
   }
 }

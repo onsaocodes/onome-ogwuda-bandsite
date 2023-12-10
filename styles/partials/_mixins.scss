@@ -1,17 +1,9 @@
 @use "./variables" as *;
 
-@mixin font($font-size, $line-height, $font-weight, $font-color) {
-  font-family: $primary-font;
-  font-size: $font-size;
-  line-height: $line-height;
-  font-weight: $font-weight;
-  color: $font-color;
-}
-
 @mixin mobile-header($color) {
   color: $color;
-  font-size: $mobile-font-size-big;
-  line-height: $mobile-line-height-big;
+  font-size: $mobile-font-size-large;
+  line-height: $mobile-line-height-large;
   font-family: $font-bold;
 }
 
@@ -27,18 +19,22 @@
   font-family: $primary-font;
 }
 
-@mixin tablet-spacing-top {
-  padding-top: $padding-24px;
+@mixin page-header($color) {
+  color: $color;
+  font-size: $font-size-extra-large;
+  line-height: $line-height-extra-large;
+  font-family: $font-bold;
 }
 
-@mixin tablet-spacing-bottom {
-  padding-bottom: $padding-24px;
+@mixin section-header {
+  color: $primary-color-black;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
+  font-family: $font-bold;
 }
 
-@mixin tablet-section-padding {
-  padding: $padding-16px $padding-36px;
-}
-
-@mixin tablet-subheader {
-  @include font(2.25rem, 2.75rem, 700, $primary-color-black);
+@mixin body {
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  font-family: $font-demi;
 }

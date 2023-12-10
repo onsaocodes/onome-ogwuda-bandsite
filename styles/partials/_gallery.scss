@@ -9,19 +9,25 @@
   background-color: $secondary-color-alabaster;
 
   @include tablet {
-    @include tablet-section-padding;
+    padding: 0 $padding-default;
   }
 
   &__header {
     padding: $mobile-padding 0;
     @include mobile-header($primary-color-black);
     @include tablet {
-      @include tablet-subheader;
+      @include section-header;
+      padding-top: $padding-before-headlines;
+      padding-bottom: $padding-default;
+      padding-left: $padding-default;
     }
   }
 
-  @include desktop {
-    padding-left: 7rem;
+  &__container {
+    @include tablet {
+      padding-bottom: $padding-default;
+      padding-left: $padding-default;
+    }
   }
 
   &__img {
@@ -29,18 +35,12 @@
     padding-bottom: $mobile-padding;
 
     @include tablet {
-      width: 32%;
-      padding-right: $padding-24px;
+      width: 33%;
+      padding-right: $padding-default;
     }
 
     @include desktop {
       width: 33%;
-    }
-
-    &--end {
-      @include tablet {
-        // padding-right: 0rem;
-      }
     }
   }
 }
