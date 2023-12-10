@@ -1,0 +1,133 @@
+@use "./partials/nav" as *;
+@use "./partials/hero" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography";
+@use "./partials/resets";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/footer" as *;
+
+.shows {
+  padding: 0 $mobile-padding;
+
+  @include tablet {
+    padding: 0 $padding-default;
+    @include body;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__header {
+    padding-top: $mobile-padding-before-headlines;
+    @include mobile-header($primary-color-black);
+    @include tablet {
+      @include section-header;
+      padding-top: $padding-before-headlines;
+      padding-bottom: $padding-default;
+    }
+    @include desktop {
+      padding-left: auto;
+    }
+  }
+
+  &__subheaders {
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include desktop {
+      width: 60%;
+    }
+  }
+
+  &__list-item {
+    border-bottom: 0.062rem solid $seconday-color-mercury;
+    padding: $mobile-padding 0;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &:nth-child(1) .shows__container-header {
+        display: block !important;
+        visibility: visible;
+        padding-bottom: $padding-default;
+      }
+
+      &:nth-child(1) .shows__button {
+        margin-top: 3.5rem;
+      }
+    }
+
+    @include desktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__date-container,
+  &__venue-container,
+  &__location-container {
+    padding: $mobile-padding 0;
+    width: 25%;
+  }
+
+  &__container-header {
+    color: $secondary-color-silver;
+    padding-bottom: 0.5rem;
+  }
+
+  &__date {
+    font-family: $font-bold;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--toHide {
+    @include tablet {
+      visibility: hidden;
+      display: none;
+    }
+  }
+
+  &__button {
+    background-color: $primary-color-black;
+    color: white;
+    height: 2.5rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0.25rem;
+
+    @include tablet {
+      width: 9.375rem;
+      min-width: 9.375rem;
+      padding: min(2rem, 0);
+    }
+  }
+
+  &__button:hover {
+    @include desktop {
+      background-color: black;
+    }
+  }
+
+  &__button:focus {
+    @include desktop {
+      background-color: black;
+    }
+  }
+}

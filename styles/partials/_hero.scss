@@ -1,19 +1,93 @@
 @use "./variables" as *;
-@use "./breakpoints" as *;
 @use "./mixins" as *;
 
 .hero {
-  @include hero-styling;
+  background: linear-gradient(
+      0deg,
+      rgba($color: $primary-color-black, $alpha: 0.5),
+      rgba($color: $primary-color-black, $alpha: 0.5)
+    ),
+    url(../../assets/images/hero-bio.jpg);
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  align-items: center;
 
-  &__heading {
-    padding-left: $padding-16px;
+  &--shows {
+    background: linear-gradient(
+        0deg,
+        rgba($color: $primary-color-black, $alpha: 0.5),
+        rgba($color: $primary-color-black, $alpha: 0.5)
+      ),
+      url(../../assets/images/hero-shows.jpg);
+    background-size: cover;
+    height: 50vh;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+
     @include tablet {
-      padding-left: $padding-36px;
-      @include font(3.75rem, 4.25rem, 700, $primary-color-white);
+      display: flex;
     }
 
     @include desktop {
-      padding-left: 5rem;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__titles {
+    @include tablet {
+      padding-left: $padding-default;
+    }
+    @include desktop {
+      align-self: center;
+    }
+  }
+
+  &__subheading {
+    padding-left: $mobile-padding;
+    @include mobile-subheader;
+    color: $primary-color-white;
+    font-family: $primary-font;
+  }
+
+  &__heading {
+    padding-left: $mobile-padding;
+    @include mobile-header($primary-color-white);
+    padding-top: $mobile-padding-before-headlines;
+    @include tablet {
+      @include page-header($primary-color-white);
+    }
+
+    @include desktop {
+      padding-left: auto;
+    }
+  }
+
+  &__music {
+    padding: $mobile-padding;
+    &-import {
+      width: 60vw;
+      height: 166px;
+
+      @include tablet {
+        width: 50vh;
+      }
+
+      @include desktop {
+        width: 10vw;
+      }
+    }
+
+    @include tablet {
+      padding-top: $padding-default;
+      padding-left: $padding-default;
+    }
+
+    @include desktop {
+      padding: auto;
+      align-self: center;
     }
   }
 }

@@ -1,14 +1,18 @@
 @use "./variables" as *;
-@use "./breakpoints" as *;
 @use "./mixins" as *;
 
 .nav {
-  @include nav-footer-styling;
+  background-color: $primary-color-black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding-top: $padding-default;
 
   @include tablet {
     flex-direction: row;
     justify-content: unset;
-    padding-left: $padding-36px;
+    align-items: start;
+    padding: 0 $padding-default;
   }
 
   @include desktop {
@@ -16,46 +20,55 @@
   }
 
   &__logo {
-    @include mobile-spacing-top;
     align-self: center;
     @include tablet {
-      @include tablet-spacing-top;
-      @include tablet-spacing-bottom;
-      margin-right: $padding-24px;
+      padding-right: $padding-default;
     }
   }
 
-  &__bar {
-    @include mobile-spacing-top;
-  }
-
   &__list {
+    color: $secondary-color-silver;
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    list-style-type: none;
   }
 
   &__list-item {
+    @include mobile-subheader;
     text-align: center;
-    @include mobile-spacing-top;
     flex: 50%;
-    @include font(1.5rem, 2rem, 400, $seconday-color-mercury);
     @include tablet {
-      @include tablet-spacing-bottom;
-      margin-right: $padding-24px;
+      padding: $mobile-padding-before-headlines;
+      color: $seconday-color-mercury;
+      font-family: $primary-font;
     }
   }
 
   &__list-item--active {
     border-bottom: 0.3rem solid $primary-color-white;
     color: $primary-color-white;
-    font-weight: 600;
+    font-family: $font-bold;
+    @include tablet {
+      border-bottom: 0;
+    }
   }
 
   &__list-item:hover {
     @include desktop {
       color: $primary-color-white;
       border-bottom: 0.3rem solid $primary-color-white;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $seconday-color-mercury;
+    &--active {
+      @include tablet {
+        color: $primary-color-white;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.3rem solid $primary-color-white;
+      }
     }
   }
 }

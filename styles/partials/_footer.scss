@@ -1,13 +1,17 @@
 @use "./variables" as *;
-@use "./breakpoints" as *;
 @use "./mixins" as *;
 
 .footer {
-  @include nav-footer-styling;
-  padding: 0 $padding-16px;
+  background-color: $primary-color-black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  padding: $mobile-padding-before-headlines $mobile-padding $mobile-padding
+    $mobile-padding;
 
   @include tablet {
-    @include tablet-section-padding;
+    padding: 0 $padding-default;
   }
 
   @include desktop {
@@ -16,33 +20,24 @@
   }
 
   &__head {
-    padding-top: $padding-24px;
-    @include font(1.5rem, 2rem, 700, $primary-color-white);
+    padding-bottom: $mobile-padding;
     @include tablet {
+      padding-top: $padding-before-headlines;
       display: flex;
       justify-content: space-between;
-      align-content: flex-start;
     }
   }
 
   &__head-container {
     @include tablet {
       display: flex;
-      gap: $padding-24px;
+      justify-content: space-between;
     }
   }
 
   &__links {
     display: flex;
     gap: 1.5rem;
-    @include mobile-spacing-bottom;
-    @include tablet {
-      align-self: flex-start;
-    }
-  }
-
-  &__link {
-    justify-content: space-around;
   }
 
   &__tablet-logo {
@@ -51,74 +46,71 @@
     @include tablet {
       visibility: visible;
       display: block;
-      padding-bottom: $padding-36px;
+      align-self: flex-start;
     }
   }
 
   &__header {
-    @include mobile-spacing-bottom;
+    @include mobile-header($primary-color-white);
+    padding-bottom: $mobile-padding;
+    @include tablet {
+      padding-right: $padding-default;
+    }
   }
 
   &__contacts-container {
+    @include mobile-body;
+    color: $primary-color-white;
     @include tablet {
-      padding-top: $padding-16px;
       display: flex;
-      @include font(0.875rem, 1.25rem, 400, $primary-color-white);
+      justify-content: space-between;
+      padding-bottom: $mobile-padding;
     }
   }
 
   &__contact {
-    @include mobile-spacing-bottom;
-    margin-right: $padding-16px;
+    padding-bottom: $mobile-padding;
     @include tablet {
-      margin-right: $padding-24px;
     }
   }
 
   &__name {
-    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
+    font-family: Avenir-Next-Demi;
   }
 
   &__company {
-    @include font(0.812rem, 1.125rem, 600, $primary-color-white);
-    @include mobile-spacing-bottom;
+    font-family: Avenir-Next-Demi;
+
+    padding-bottom: $mobile-padding;
   }
 
   &__address,
   &__role {
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-    @include mobile-spacing-bottom;
+    padding-bottom: $mobile-padding;
   }
 
-  &__email {
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
-  }
-
-  &__capitals {
+  &__company--capitals {
     text-transform: uppercase;
   }
 
   &__logo {
-    padding-top: $padding-24px;
-    @include mobile-spacing-bottom;
-    @include font(0.812rem, 1.125rem, 400, $primary-color-white);
+    padding-bottom: $mobile-padding;
+  }
+
+  &__mobile-logo {
+    padding-top: $mobile-padding-before-headlines;
+    padding-bottom: $mobile-padding;
     @include tablet {
-      padding: 0;
+      visibility: hidden;
+      display: none;
     }
   }
 
   &__copyright {
-    @include mobile-spacing-top;
-    @include mobile-spacing-bottom;
+    padding-bottom: $mobile-padding;
+    color: $primary-color-white;
     @include tablet {
-      padding: 0;
-    }
-  }
-
-  &__mobile-logo {
-    @include tablet {
-      visibility: hidden;
-      display: none;
+      // padding-left: $mobile-padding;
     }
   }
 }

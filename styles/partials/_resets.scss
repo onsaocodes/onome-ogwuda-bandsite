@@ -1,8 +1,15 @@
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
+@use "./variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $primary-font;
+  color: $primary-color-black;
+  font-size: $mobile-font-size-small;
+}

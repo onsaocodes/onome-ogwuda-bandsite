@@ -3,5 +3,7 @@
 @use "./partials/musicians" as *;
 @use "./partials/gallery" as *;
 @use "./partials/footer" as *;
+@use "./partials/variables" as *;
+@use "./partials/comments" as *;
 @use "./partials/typography";
 @use "./partials/resets";

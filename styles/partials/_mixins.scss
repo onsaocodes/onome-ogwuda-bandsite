@@ -1,63 +1,52 @@
 @use "./variables" as *;
 
-@mixin font($font-size, $line-height, $font-weight, $font-color) {
-  font-family: $font;
-  font-size: $font-size;
-  line-height: $line-height;
-  font-weight: $font-weight;
-  color: $font-color;
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 
-@mixin nav-footer-styling {
-  background-color: $primary-color-black;
-  color: $secondary-color-silver;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
 
-@mixin hero-styling {
-  background: linear-gradient(
-      0deg,
-      rgba($color: $primary-color-black, $alpha: 0.5),
-      rgba($color: $primary-color-black, $alpha: 0.5)
-    ),
-    url(../../assets/images/hero-bio.jpg);
-  background-size: cover;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  @include font(1.5rem, 2rem, 600, $primary-color-white);
-}
-
-@mixin mobile-spacing-top {
-  padding-top: $padding-16px;
-}
-
-@mixin mobile-spacing-bottom {
-  padding-bottom: $padding-16px;
-}
-
-@mixin tablet-spacing-top {
-  padding-top: $padding-24px;
-}
-
-@mixin tablet-spacing-bottom {
-  padding-bottom: $padding-24px;
-}
-
-@mixin mobile-section-padding {
-  padding: $padding-24px $padding-16px $padding-16px $padding-16px;
+@mixin mobile-header($color) {
+  color: $color;
+  font-size: $mobile-font-size-large;
+  line-height: $mobile-line-height-large;
+  font-family: $font-bold;
 }
 
 @mixin mobile-subheader {
-  @include font(1.5rem, 2rem, 700, $primary-color-black);
+  font-size: $mobile-font-size-medium;
+  line-height: $mobile-line-height-medium;
+  font-family: $font-demi;
 }
 
-@mixin tablet-section-padding {
-  padding: $padding-16px $padding-36px;
+@mixin mobile-body {
+  font-size: $mobile-font-size-small;
+  line-height: $mobile-line-height-small;
+  font-family: $primary-font;
 }
 
-@mixin tablet-subheader {
-  @include font(2.25rem, 2.75rem, 700, $primary-color-black);
+@mixin page-header($color) {
+  color: $color;
+  font-size: $font-size-extra-large;
+  line-height: $line-height-extra-large;
+  font-family: $font-bold;
+}
+
+@mixin section-header {
+  color: $primary-color-black;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
+  font-family: $font-bold;
+}
+
+@mixin body {
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  font-family: $primary-font;
 }
