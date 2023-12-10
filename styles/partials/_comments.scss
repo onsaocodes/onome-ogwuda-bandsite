@@ -1,12 +1,13 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./breakpoints" as *;
 
 .comments {
   padding: 0 $mobile-padding;
+  @include mobile-body;
 
   @include tablet {
     padding: 0 $padding-default;
+    @include body;
   }
 
   &__header {
@@ -65,8 +66,14 @@
     padding: 0.75rem;
     border: 0.062rem solid $seconday-color-mercury;
     font-family: $primary-font;
+    font-size: $mobile-font-size-small;
+
     color: $seconday-color-black;
     outline: none;
+
+    @include tablet {
+      font-size: $font-size-medium;
+    }
   }
 
   input[type="text"]:focus,
@@ -86,6 +93,11 @@
     max-width: 100%;
     border-radius: 0.25rem;
     text-transform: uppercase;
+    font-size: $font-size-small;
+
+    @include tablet {
+      font-size: $font-size-medium;
+    }
   }
 
   &__submit-btn:hover {

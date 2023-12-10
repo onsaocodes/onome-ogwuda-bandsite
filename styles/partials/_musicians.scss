@@ -1,9 +1,14 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./breakpoints" as *;
 
 .musicians {
   padding: 0 $mobile-padding;
+  @include mobile-body;
+
+  @include tablet {
+    padding-left: $padding-default;
+    @include body;
+  }
 
   &__header {
     padding-top: $mobile-padding-before-headlines;
@@ -11,6 +16,7 @@
     @include tablet {
       @include section-header;
       padding-top: $padding-before-headlines;
+      padding-left: $padding-default;
     }
     @include desktop {
       padding-left: auto;

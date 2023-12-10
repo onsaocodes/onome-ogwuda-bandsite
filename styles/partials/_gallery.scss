@@ -1,6 +1,5 @@
 @use "./variables" as *;
 @use "./mixins" as *;
-@use "./breakpoints" as *;
 
 .gallery {
   padding: 0 $mobile-padding;

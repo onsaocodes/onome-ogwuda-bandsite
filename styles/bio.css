@@ -171,6 +171,17 @@
 
 .musicians {
   padding: 0 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: Avenir-Next-Regular;
+}
+@media (min-width: 768px) {
+  .musicians {
+    padding-left: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+    font-family: Avenir-Next-Regular;
+  }
 }
 .musicians__header {
   padding-top: 1.5rem;
@@ -186,6 +197,7 @@
     line-height: 2rem;
     font-family: Avenir-Next-Bold;
     padding-top: 3rem;
+    padding-left: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -251,7 +263,7 @@
     padding-left: 2.25rem;
     font-size: 1.5rem;
     line-height: 1.375rem;
-    font-family: Avenir-Next-Demi;
+    font-family: Avenir-Next-Regular;
   }
 }
 @media (min-width: 768px) {
@@ -430,10 +442,16 @@
 }
 .comments {
   padding: 0 1rem;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: Avenir-Next-Regular;
 }
 @media (min-width: 768px) {
   .comments {
     padding: 0 2.25rem;
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+    font-family: Avenir-Next-Regular;
   }
 }
 .comments__header {
@@ -498,8 +516,14 @@
   padding: 0.75rem;
   border: 0.062rem solid #e1e1e1;
   font-family: Avenir-Next-Regular;
+  font-size: 0.8125rem;
   color: #000000;
   outline: none;
+}
+@media (min-width: 768px) {
+  .comments__name, .comments__box {
+    font-size: 1.5rem;
+  }
 }
 .comments input[type=text]:focus,
 .comments textarea:focus {
@@ -516,6 +540,12 @@
   max-width: 100%;
   border-radius: 0.25rem;
   text-transform: uppercase;
+  font-size: 0.875rem;
+}
+@media (min-width: 768px) {
+  .comments__submit-btn {
+    font-size: 1.5rem;
+  }
 }
 .comments__submit-btn:hover {
   background-color: #000000;
