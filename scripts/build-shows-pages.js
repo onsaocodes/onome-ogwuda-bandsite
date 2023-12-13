@@ -1,61 +1,9 @@
-let shows = [
-  {
-    date: new Date("2021-09-06").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("2021-09-21").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("2021-10-15").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("2021-11-06").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("2021-11-26").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("2021-12-15").toDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const API_KEY = "aec0a6a6-3a7d-4161-9edd-6582097dd956";
 
-const loadShows = () => {
+const loadShows = async () => {
+  const bandSiteApi = new BandSiteApi(API_KEY);
+  const shows = await bandSiteApi.getShows();
+
   let listEl = document.querySelector(".shows__list");
   for (let i = 0; i < shows.length; i++) {
     let itemEl = document.createElement("li");
@@ -79,8 +27,12 @@ const loadShows = () => {
 
     let dateEl = document.createElement("p");
     dateEl.classList.add("shows__date");
-    dateEl.innerHTML = shows[i].date;
-    dateContainerEl.appendChild(dateEl);
+    (dateEl.innerHTML = new Date(shows[i].date).toDateString("en-US", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    })),
+      dateContainerEl.appendChild(dateEl);
 
     let venueContainerEl = document.createElement("div");
     venueContainerEl.classList.add("shows__venue-container");
@@ -99,7 +51,7 @@ const loadShows = () => {
 
     let venueEl = document.createElement("p");
     venueEl.classList.add("shows__venue");
-    venueEl.innerHTML = shows[i].venue;
+    venueEl.innerHTML = shows[i].place;
     venueContainerEl.appendChild(venueEl);
 
     let locationContainerEl = document.createElement("div");

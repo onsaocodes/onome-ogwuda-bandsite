@@ -1,37 +1,14 @@
-let comments = [
-  {
-    name: "Connor Walton",
-    date: new Date("2021-02-17").toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: new Date("01/09/2021").toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: new Date("12/20/2020").toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+const API_KEY = "aec0a6a6-3a7d-4161-9edd-6582097dd956";
+const bandSiteApi = new BandSiteApi(API_KEY);
 
-const loadComment = () => {
+const loadComment = async () => {
+  const comments = await bandSiteApi.getComments();
+
+  comments.sort((a, b) => {
+    return b.timestamp - a.timestamp;
+  });
+  console.log(comments);
+
   let listEl = document.querySelector(".comments__list");
 
   listEl.innerHTML = "";
@@ -60,36 +37,39 @@ const loadComment = () => {
 
     let commentDateEl = document.createElement("p");
     commentDateEl.classList.add("comments__date");
-    commentDateEl.innerHTML = comments[i].date;
-    commentInfoEl.appendChild(commentDateEl);
+    (commentDateEl.innerHTML = new Date(
+      comments[i].timestamp
+    ).toLocaleDateString("en-US", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    })),
+      commentInfoEl.appendChild(commentDateEl);
 
     let commentEl = document.createElement("p");
     commentEl.classList.add("comments__text");
     commentEl.innerHTML = comments[i].comment;
     commentsInfoContainerEl.appendChild(commentEl);
   }
+  return comments;
 };
 
 loadComment();
+console.log(loadComment());
 
 const commentForm = document.querySelector(".comments__form");
-const addComment = (event) => {
+const addComment = async (event) => {
   event.preventDefault();
 
   const newComment = {
     name: event.target.name.value,
-    date: new Date().toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    }),
     comment: event.target.comment.value,
   };
 
   let nameInput = document.querySelector(".comments__name");
   let commentInput = document.querySelector(".comments__box");
 
-  if (newComment.name == "") {
+  if (newComment.name === "") {
     nameInput.classList.add("comments__error");
     commentForm.appendChild(nameInput);
     alert("Please enter your name");
@@ -97,9 +77,8 @@ const addComment = (event) => {
     commentInput.classList.add("comments__error");
     alert("Please enter a comment");
   } else {
-    comments.unshift(newComment);
+    await bandSiteApi.postComments(newComment);
   }
-
   commentForm.reset();
   loadComment();
 };
