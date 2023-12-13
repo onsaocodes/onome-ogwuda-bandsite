@@ -1,6 +1,39 @@
 const API_KEY = "aec0a6a6-3a7d-4161-9edd-6582097dd956";
 const bandSiteApi = new BandSiteApi(API_KEY);
 
+const timeAgo = (date) => {
+  const seconds = Math.floor((new Date() - date) / 1000);
+
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + " years ago";
+  }
+
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months ago";
+  }
+
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days ago";
+  }
+
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours ago";
+  }
+
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes ago";
+  }
+
+  if (seconds < 10) return "just now";
+
+  return Math.floor(seconds) + " seconds ago";
+};
+
 const loadComment = async () => {
   const comments = await bandSiteApi.getComments();
 
@@ -37,14 +70,8 @@ const loadComment = async () => {
 
     let commentDateEl = document.createElement("p");
     commentDateEl.classList.add("comments__date");
-    (commentDateEl.innerHTML = new Date(
-      comments[i].timestamp
-    ).toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    })),
-      commentInfoEl.appendChild(commentDateEl);
+    commentDateEl.innerHTML = timeAgo(comments[i].timestamp);
+    commentInfoEl.appendChild(commentDateEl);
 
     let commentEl = document.createElement("p");
     commentEl.classList.add("comments__text");
@@ -72,8 +99,10 @@ const addComment = async (event) => {
   if (!newComment.name) {
     nameInput.classList.add("comments__error");
   } else if (!newComment.comment) {
+    nameInput.classList.remove("comments__error");
     commentInput.classList.add("comments__error");
   } else {
+    commentInput.classList.remove("comments__error");
     await bandSiteApi.postComments(newComment);
     commentForm.reset();
     loadComment();
