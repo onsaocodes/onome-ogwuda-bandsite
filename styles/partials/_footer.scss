@@ -80,13 +80,17 @@
 
   &__company {
     font-family: Avenir-Next-Demi;
-
     padding-bottom: $mobile-padding;
   }
 
   &__address,
   &__role {
     padding-bottom: $mobile-padding;
+  }
+
+  &__email-address {
+    text-decoration: none;
+    color: $primary-color-white;
   }
 
   &__company--capitals {

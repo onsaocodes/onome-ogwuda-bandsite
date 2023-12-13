@@ -32,6 +32,7 @@
   &__img {
     width: 100%;
     padding-bottom: $mobile-padding;
+    filter: grayscale(100%);
 
     @include tablet {
       width: 33%;
@@ -40,6 +41,10 @@
 
     @include desktop {
       width: 33%;
+    }
+
+    &:hover {
+      filter: none;
     }
   }
 }

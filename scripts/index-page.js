@@ -69,18 +69,15 @@ const addComment = async (event) => {
   let nameInput = document.querySelector(".comments__name");
   let commentInput = document.querySelector(".comments__box");
 
-  if (newComment.name === "") {
+  if (!newComment.name) {
     nameInput.classList.add("comments__error");
-    commentForm.appendChild(nameInput);
-    alert("Please enter your name");
-  } else if (newComment.comment === "") {
+  } else if (!newComment.comment) {
     commentInput.classList.add("comments__error");
-    alert("Please enter a comment");
   } else {
     await bandSiteApi.postComments(newComment);
+    commentForm.reset();
+    loadComment();
   }
-  commentForm.reset();
-  loadComment();
 };
 
 commentForm.addEventListener("submit", addComment);

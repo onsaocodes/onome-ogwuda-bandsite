@@ -57,17 +57,24 @@
   }
 }
 @media (min-width: 1280px) {
-  .nav__list-item:hover {
-    color: white;
-    border-bottom: 0.3rem solid white;
+  .nav__list-item--active {
+    border-bottom: 0;
   }
 }
 .nav__link {
   text-decoration: none;
   color: #e1e1e1;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .nav__link--active {
+    color: white;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.3rem solid white;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__link:hover {
     color: white;
     padding-bottom: 1.5rem;
     border-bottom: 0.3rem solid white;
@@ -287,6 +294,10 @@ body {
 }
 .footer__address, .footer__role {
   padding-bottom: 1rem;
+}
+.footer__email-address {
+  text-decoration: none;
+  color: white;
 }
 .footer__company--capitals {
   text-transform: uppercase;
