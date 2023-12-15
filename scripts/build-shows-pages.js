@@ -16,18 +16,18 @@ const loadShows = async () => {
 
     let dateHeaderEl = document.createElement("p");
     dateHeaderEl.classList.add("shows__container-header");
-    dateHeaderEl.innerHTML = "Date";
+    dateHeaderEl.innertext = "Date";
     dateContainerEl.appendChild(dateHeaderEl);
 
-    dateHeaderEl.classList.add("shows--uppercase");
+    dateHeaderEl.classList.add("shows__container-header--uppercase");
     dateContainerEl.appendChild(dateHeaderEl);
 
-    dateHeaderEl.classList.add("shows--toHide");
+    dateHeaderEl.classList.add("shows__container-header--toHide");
     dateContainerEl.appendChild(dateHeaderEl);
 
     let dateEl = document.createElement("p");
     dateEl.classList.add("shows__date");
-    (dateEl.innerHTML = new Date(shows[i].date).toDateString("en-US", {
+    (dateEl.innerText = new Date(shows[i].date).toDateString("en-US", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -40,18 +40,18 @@ const loadShows = async () => {
 
     let venueHeaderEl = document.createElement("p");
     venueHeaderEl.classList.add("shows__container-header");
-    venueHeaderEl.innerHTML = "Venue";
+    venueHeaderEl.innerText = "Venue";
     venueContainerEl.appendChild(venueHeaderEl);
 
-    venueHeaderEl.classList.add("shows--uppercase");
+    venueHeaderEl.classList.add("shows__container-header--uppercase");
     venueContainerEl.appendChild(venueHeaderEl);
 
-    venueHeaderEl.classList.add("shows--toHide");
+    venueHeaderEl.classList.add("shows__container-header--toHide");
     venueContainerEl.appendChild(venueHeaderEl);
 
     let venueEl = document.createElement("p");
     venueEl.classList.add("shows__venue");
-    venueEl.innerHTML = shows[i].place;
+    venueEl.innerText = shows[i].place;
     venueContainerEl.appendChild(venueEl);
 
     let locationContainerEl = document.createElement("div");
@@ -60,18 +60,18 @@ const loadShows = async () => {
 
     let locationHeaderEl = document.createElement("p");
     locationHeaderEl.classList.add("shows__container-header");
-    locationHeaderEl.innerHTML = "Location";
+    locationHeaderEl.innerText = "Location";
     locationContainerEl.appendChild(locationHeaderEl);
 
-    locationHeaderEl.classList.add("shows--uppercase");
+    locationHeaderEl.classList.add("shows__container-header--uppercase");
     locationContainerEl.appendChild(locationHeaderEl);
 
-    locationHeaderEl.classList.add("shows--toHide");
+    locationHeaderEl.classList.add("shows__container-header--toHide");
     locationContainerEl.appendChild(locationHeaderEl);
 
     let locationEl = document.createElement("p");
     locationEl.classList.add("shows__location");
-    locationEl.innerHTML = shows[i].location;
+    locationEl.innerText = shows[i].location;
     locationContainerEl.appendChild(locationEl);
 
     let btnEl = document.createElement("button");
@@ -79,7 +79,7 @@ const loadShows = async () => {
     btnEl.innerText = "Buy Tickets";
     itemEl.appendChild(btnEl);
 
-    btnEl.classList.add("shows--uppercase");
+    btnEl.classList.add("shows__container-header--uppercase");
   }
 };
 

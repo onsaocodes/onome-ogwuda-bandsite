@@ -5,24 +5,39 @@ class BandSiteApi {
   }
 
   async postComments(comment) {
-    await axios.post(`${this.baseUrl}comments?api_key=${this.apiKey}`, comment);
-    return comment;
+    try {
+      await axios.post(
+        `${this.baseUrl}comments?api_key=${this.apiKey}`,
+        comment
+      );
+      return comment;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async getComments() {
-    const response = await axios.get(
-      `${this.baseUrl}comments?api_key=${this.apiKey}`
-    );
-    const comments = response.data;
-    return comments;
+    try {
+      const response = await axios.get(
+        `${this.baseUrl}comments?api_key=${this.apiKey}`
+      );
+      const comments = response.data;
+      return comments;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async getShows() {
-    const response = await axios.get(
-      `${this.baseUrl}showdates?api_key=${this.apiKey}`
-    );
+    try {
+      const response = await axios.get(
+        `${this.baseUrl}showdates?api_key=${this.apiKey}`
+      );
 
-    const shows = response.data;
-    return shows;
+      const shows = response.data;
+      return shows;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }

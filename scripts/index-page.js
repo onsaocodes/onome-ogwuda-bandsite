@@ -1,5 +1,7 @@
 const API_KEY = "aec0a6a6-3a7d-4161-9edd-6582097dd956";
 const bandSiteApi = new BandSiteApi(API_KEY);
+let listEl = document.querySelector(".comments__list");
+
 
 const timeAgo = (date) => {
   const seconds = Math.floor((new Date() - date) / 1000);
@@ -34,6 +36,39 @@ const timeAgo = (date) => {
   return Math.floor(seconds) + " seconds ago";
 };
 
+const createComment = (comment) => {
+  let itemEl = document.createElement("li");
+  itemEl.classList.add("comments__list-item");
+  listEl.appendChild(itemEl);
+
+  let avatarEl = document.createElement("div");
+  avatarEl.classList.add("comments__avatar");
+  itemEl.appendChild(avatarEl);
+
+  let commentsInfoContainerEl = document.createElement("div");
+  commentsInfoContainerEl.classList.add("comments__info-container");
+  itemEl.appendChild(commentsInfoContainerEl);
+
+  let commentInfoEl = document.createElement("div");
+  commentInfoEl.classList.add("comments__info");
+  commentsInfoContainerEl.appendChild(commentInfoEl);
+
+  let commentPersonEl = document.createElement("p");
+  commentPersonEl.classList.add("comments__person");
+  commentPersonEl.innerText = comment.name;
+  commentInfoEl.appendChild(commentPersonEl);
+
+  let commentDateEl = document.createElement("p");
+  commentDateEl.classList.add("comments__date");
+  commentDateEl.innerText = timeAgo(comment.timestamp);
+  commentInfoEl.appendChild(commentDateEl);
+
+  let commentEl = document.createElement("p");
+  commentEl.classList.add("comments__text");
+  commentEl.innerText = comment.comment;
+  commentsInfoContainerEl.appendChild(commentEl);
+}
+
 const loadComment = async () => {
   const comments = await bandSiteApi.getComments();
 
@@ -42,47 +77,20 @@ const loadComment = async () => {
   });
   console.log(comments);
 
-  let listEl = document.querySelector(".comments__list");
 
   listEl.innerHTML = "";
 
   for (let i = 0; i < comments.length; i++) {
-    let itemEl = document.createElement("li");
-    itemEl.classList.add("comments__list-item");
-    listEl.appendChild(itemEl);
+    createComment(comments[i]);
 
-    let avatarEl = document.createElement("div");
-    avatarEl.classList.add("comments__avatar");
-    itemEl.appendChild(avatarEl);
-
-    let commentsInfoContainerEl = document.createElement("div");
-    commentsInfoContainerEl.classList.add("comments__info-container");
-    itemEl.appendChild(commentsInfoContainerEl);
-
-    let commentInfoEl = document.createElement("div");
-    commentInfoEl.classList.add("comments__info");
-    commentsInfoContainerEl.appendChild(commentInfoEl);
-
-    let commentPersonEl = document.createElement("p");
-    commentPersonEl.classList.add("comments__person");
-    commentPersonEl.innerHTML = comments[i].name;
-    commentInfoEl.appendChild(commentPersonEl);
-
-    let commentDateEl = document.createElement("p");
-    commentDateEl.classList.add("comments__date");
-    commentDateEl.innerHTML = timeAgo(comments[i].timestamp);
-    commentInfoEl.appendChild(commentDateEl);
-
-    let commentEl = document.createElement("p");
-    commentEl.classList.add("comments__text");
-    commentEl.innerHTML = comments[i].comment;
-    commentsInfoContainerEl.appendChild(commentEl);
   }
   return comments;
 };
 
 loadComment();
 console.log(loadComment());
+
+
 
 const commentForm = document.querySelector(".comments__form");
 const addComment = async (event) => {

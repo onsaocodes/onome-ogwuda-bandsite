@@ -60,16 +60,6 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-
-      &:nth-child(1) .shows__container-header {
-        display: block !important;
-        visibility: visible;
-        padding-bottom: $padding-default;
-      }
-
-      &:nth-child(1) .shows__button {
-        margin-top: 3.5rem;
-      }
     }
 
     @include desktop {
@@ -87,21 +77,27 @@
   &__container-header {
     color: $secondary-color-silver;
     padding-bottom: 0.5rem;
+
+    &:nth-child(1) .shows__container-header {
+      display: block !important;
+      visibility: visible;
+      padding-bottom: $padding-default;
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  
+    &--toHide {
+      @include tablet {
+        visibility: hidden;
+        display: none;
+      }
+    }
   }
 
   &__date {
-    font-family: $font-bold;
-  }
-
-  &--uppercase {
-    text-transform: uppercase;
-  }
-
-  &--toHide {
-    @include tablet {
-      visibility: hidden;
-      display: none;
-    }
+    font-weight: 700;
   }
 
   &__button {
@@ -111,6 +107,11 @@
     width: 100%;
     max-width: 100%;
     border-radius: 0.25rem;
+
+    
+    &:nth-child(1) .shows__button {
+      margin-top: 3.5rem;
+    }
 
     @include tablet {
       width: 9.375rem;

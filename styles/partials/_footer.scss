@@ -2,6 +2,7 @@
 @use "./mixins" as *;
 
 .footer {
+  font-family: $primary-font;
   background-color: $primary-color-black;
   display: flex;
   justify-content: space-evenly;
@@ -75,11 +76,11 @@
   }
 
   &__name {
-    font-family: Avenir-Next-Demi;
+    font-weight: 600;
   }
 
   &__company {
-    font-family: Avenir-Next-Demi;
+    font: Avenir-Next-Demi;
     padding-bottom: $mobile-padding;
   }
 

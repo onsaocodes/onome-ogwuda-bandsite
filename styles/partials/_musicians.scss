@@ -49,7 +49,7 @@
   }
 
   &__image-caption {
-    font-family: $font-demi;
+    font-weight: 600;
     @include tablet {
       padding-left: $padding-default;
       padding-right: $padding-default;

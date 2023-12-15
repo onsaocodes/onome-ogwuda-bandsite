@@ -20,8 +20,6 @@
         rgba($color: $primary-color-black, $alpha: 0.5)
       ),
       url(../../assets/images/hero-shows.jpg);
-    background-size: cover;
-    height: 50vh;
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
@@ -69,7 +67,7 @@
     padding: $mobile-padding;
     &-import {
       width: 60vw;
-      height: 166px;
+      height: 10.375rem;
 
       @include tablet {
         width: 50vh;
