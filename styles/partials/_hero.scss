@@ -2,44 +2,35 @@
 @use "./mixins" as *;
 
 .hero {
-  background: linear-gradient(
-      0deg,
-      rgba($color: $primary-color-black, $alpha: 0.5),
-      rgba($color: $primary-color-black, $alpha: 0.5)
-    ),
-    url(../../assets/images/hero-bio.jpg);
-  background-size: cover;
-  height: 50vh;
-  display: flex;
-  align-items: center;
+  @include hero("../../assets/images/hero-bio.jpg", center);
+
+  @include tablet {
+    height: 50vh;
+  }
 
   &--shows {
-    background: linear-gradient(
-        0deg,
-        rgba($color: $primary-color-black, $alpha: 0.5),
-        rgba($color: $primary-color-black, $alpha: 0.5)
-      ),
-      url(../../assets/images/hero-shows.jpg);
+    @include hero("../../assets/images/hero-shows.jpg", baseline);
     flex-direction: column;
-    align-items: baseline;
     justify-content: center;
 
     @include tablet {
       display: flex;
+      height: 50vh;
     }
 
     @include desktop {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      padding: 0 3.75rem;
+      height: 45vh;
     }
   }
 
   &__titles {
-    @include tablet {
-      padding-left: $padding-default;
-    }
+    padding-top: $mobile-padding-before-headlines;
     @include desktop {
-      align-self: center;
+      width: 100%;
     }
   }
 
@@ -48,44 +39,51 @@
     @include mobile-subheader;
     color: $primary-color-white;
     font-family: $primary-font;
-  }
 
-  &__heading {
-    padding-left: $mobile-padding;
-    @include mobile-header($primary-color-white);
-    padding-top: $mobile-padding-before-headlines;
     @include tablet {
-      @include page-header($primary-color-white);
+      @include subheader;
+      color: $primary-color-white;
     }
 
     @include desktop {
-      padding-left: auto;
+      padding-left: 3.75rem;
+    }
+  }
+
+  &__heading {
+    @include mobile-header($primary-color-white);
+    padding-left: $mobile-padding;
+    padding-top: $mobile-padding;
+    @include tablet {
+      @include page-header($primary-color-white);
+    }
+    @include desktop {
+      padding-left: 3.75rem;
     }
   }
 
   &__music {
-    padding: $mobile-padding;
-    &-import {
-      width: 60vw;
-      height: 10.375rem;
-
-      @include tablet {
-        width: 50vh;
-      }
-
-      @include desktop {
-        width: 10vw;
-      }
-    }
+    padding: $mobile-padding $mobile-padding;
+    width: 100%;
 
     @include tablet {
-      padding-top: $padding-default;
+      width: 100%;
+      padding-bottom: $padding-default;
       padding-left: $padding-default;
     }
 
-    @include desktop {
-      padding: auto;
-      align-self: center;
+    &-import {
+      width: 100%;
+
+      @include tablet {
+        width: 59%;
+      }
+
+      @include desktop {
+        width: 85%;
+        padding-left: 3.75rem;
+        padding-top: 3.75rem;
+      }
     }
   }
 }

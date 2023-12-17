@@ -21,6 +21,8 @@
 
   &__logo {
     align-self: center;
+    max-height: 1.25rem;
+    max-width: 7.5rem;
     @include tablet {
       padding-right: $padding-default;
     }
@@ -30,17 +32,16 @@
     color: $secondary-color-silver;
     list-style-type: none;
     display: flex;
-    list-style-type: none;
   }
 
   &__list-item {
     @include mobile-subheader;
     text-align: center;
     flex: 50%;
+    font-weight: 400;
     @include tablet {
       padding: $mobile-padding-before-headlines;
       color: $seconday-color-mercury;
-      font-family: $primary-font;
     }
   }
 

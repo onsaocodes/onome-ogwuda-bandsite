@@ -16,7 +16,7 @@ const loadShows = async () => {
 
     let dateHeaderEl = document.createElement("p");
     dateHeaderEl.classList.add("shows__container-header");
-    dateHeaderEl.innertext = "Date";
+    dateHeaderEl.innerText = "Date";
     dateContainerEl.appendChild(dateHeaderEl);
 
     dateHeaderEl.classList.add("shows__container-header--uppercase");
@@ -80,6 +80,7 @@ const loadShows = async () => {
     itemEl.appendChild(btnEl);
 
     btnEl.classList.add("shows__container-header--uppercase");
+    const commentForm = document.querySelector(".comments__form");
   }
 };
 

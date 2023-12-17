@@ -2,7 +2,6 @@ const API_KEY = "aec0a6a6-3a7d-4161-9edd-6582097dd956";
 const bandSiteApi = new BandSiteApi(API_KEY);
 let listEl = document.querySelector(".comments__list");
 
-
 const timeAgo = (date) => {
   const seconds = Math.floor((new Date() - date) / 1000);
 
@@ -43,6 +42,7 @@ const createComment = (comment) => {
 
   let avatarEl = document.createElement("div");
   avatarEl.classList.add("comments__avatar");
+  avatarEl.classList.add("comments__avatar--placeholder");
   itemEl.appendChild(avatarEl);
 
   let commentsInfoContainerEl = document.createElement("div");
@@ -67,7 +67,7 @@ const createComment = (comment) => {
   commentEl.classList.add("comments__text");
   commentEl.innerText = comment.comment;
   commentsInfoContainerEl.appendChild(commentEl);
-}
+};
 
 const loadComment = async () => {
   const comments = await bandSiteApi.getComments();
@@ -77,20 +77,16 @@ const loadComment = async () => {
   });
   console.log(comments);
 
-
   listEl.innerHTML = "";
 
   for (let i = 0; i < comments.length; i++) {
     createComment(comments[i]);
-
   }
   return comments;
 };
 
 loadComment();
 console.log(loadComment());
-
-
 
 const commentForm = document.querySelector(".comments__form");
 const addComment = async (event) => {

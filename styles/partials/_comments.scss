@@ -10,6 +10,10 @@
     @include body;
   }
 
+  @include desktop {
+    padding: 0 3.75rem;
+  }
+
   &__header {
     padding-top: $mobile-padding-before-headlines;
     padding-bottom: $mobile-padding;
@@ -18,9 +22,6 @@
       @include section-header;
       padding-top: $padding-before-headlines;
       padding-left: $padding-default;
-    }
-    @include desktop {
-      padding-left: auto;
     }
   }
 
@@ -32,6 +33,10 @@
     @include tablet {
       padding-left: $padding-default;
     }
+
+    @include desktop {
+      padding: 0 3.75rem;
+    }
   }
 
   &__form {
@@ -39,7 +44,6 @@
     flex-direction: column;
     width: 100%;
     min-height: 2.25rem;
-    padding: 0.75rem;
     @include tablet {
       min-height: 3rem;
       padding: 1rem;
@@ -50,6 +54,12 @@
     text-transform: uppercase;
     color: $secondary-color-silver;
     padding-bottom: 0.25rem;
+    font-size: $mobile-font-size-xsmall;
+    line-height: $mobile-line-height-small;
+    @include tablet {
+      font-size: $font-size-xsmall;
+      line-height: $line-height-small;
+    }
   }
 
   &__form-name,
@@ -61,18 +71,21 @@
 
   &__name,
   &__box {
-    width: 100%;
     border-radius: 0.25rem;
     padding: 0.75rem;
     border: 0.062rem solid $seconday-color-mercury;
-    font-family: $primary-font;
-    font-size: $mobile-font-size-small;
-
-    color: $seconday-color-black;
+    font-family: inherit;
+    color: inherit;
     outline: none;
+  }
+
+  &__name {
+    height: min(2.25rem);
+    width: 100%;
 
     @include tablet {
-      font-size: $font-size-medium;
+      height: min(3rem);
+      padding: 1rem;
     }
   }
 
@@ -93,10 +106,17 @@
     max-width: 100%;
     border-radius: 0.25rem;
     text-transform: uppercase;
-    font-size: $font-size-small;
-
+    font-size: $mobile-font-size-xsmall;
+    font-family: inherit;
+    font-weight: 700;
     @include tablet {
-      font-size: $font-size-medium;
+      font-size: $font-size-xsmall;
+      line-height: $line-height-small;
+      font-weight: 700;
+      width: min(9.375rem);
+      min-width: 9.375rem;
+      padding: 0 min(2rem);
+      align-self: flex-end;
     }
   }
 
@@ -111,6 +131,11 @@
     list-style-type: none;
     display: flex;
     flex-direction: column;
+
+    @include desktop {
+      @include body;
+      padding: 0 10rem;
+    }
   }
 
   &__list-item {
@@ -129,6 +154,10 @@
     @include tablet {
       padding-top: $padding-default;
     }
+
+    @include desktop {
+      padding-left: 3.75rem;
+    }
   }
 
   &__avatar {
@@ -143,12 +172,19 @@
       max-width: 3rem;
       max-height: 3rem;
     }
+    &--new {
+      margin-left: 1rem;
+    }
   }
 
   &__info-container,
   &__form-container {
     width: 100%;
     padding-left: $mobile-padding;
+    padding-bottom: $mobile-padding;
+    @include desktop {
+      padding-right: 3.75rem;
+    }
   }
 
   &__info {

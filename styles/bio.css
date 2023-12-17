@@ -20,6 +20,8 @@
 }
 .nav__logo {
   align-self: center;
+  max-height: 1.25rem;
+  max-width: 7.5rem;
 }
 @media (min-width: 768px) {
   .nav__logo {
@@ -30,7 +32,6 @@
   color: #afafaf;
   list-style-type: none;
   display: flex;
-  list-style-type: none;
 }
 .nav__list-item {
   font-size: 0.875rem;
@@ -38,12 +39,12 @@
   font-weight: 600;
   text-align: center;
   flex: 50%;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .nav__list-item {
     padding: 1.5rem;
     color: #e1e1e1;
-    font-family: Avenir-Next;
   }
 }
 .nav__list-item--active {
@@ -82,37 +83,49 @@
 }
 
 .hero {
-  background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../assets/images/hero-bio.jpg);
+  background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/hero-bio.jpg");
   background-size: cover;
-  height: 50vh;
   display: flex;
+  width: 100vw;
+  height: 30vh;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+}
 .hero--shows {
-  background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../../assets/images/hero-shows.jpg);
-  flex-direction: column;
+  background: linear-gradient(0deg, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../../assets/images/hero-shows.jpg");
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  height: 30vh;
   align-items: baseline;
+  flex-direction: column;
   justify-content: center;
 }
 @media (min-width: 768px) {
   .hero--shows {
     display: flex;
+    height: 50vh;
   }
 }
 @media (min-width: 1280px) {
   .hero--shows {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding: 0 3.75rem;
+    height: 45vh;
   }
 }
-@media (min-width: 768px) {
-  .hero__titles {
-    padding-left: 2.25rem;
-  }
+.hero__titles {
+  padding-top: 1.5rem;
 }
 @media (min-width: 1280px) {
   .hero__titles {
-    align-self: center;
+    width: 100%;
   }
 }
 .hero__subheading {
@@ -123,13 +136,27 @@
   color: white;
   font-family: Avenir-Next;
 }
+@media (min-width: 768px) {
+  .hero__subheading {
+    color: #323232;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: white;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__subheading {
+    padding-left: 3.75rem;
+  }
+}
 .hero__heading {
-  padding-left: 1rem;
   color: white;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   .hero__heading {
@@ -141,51 +168,51 @@
 }
 @media (min-width: 1280px) {
   .hero__heading {
-    padding-left: auto;
+    padding-left: 3.75rem;
   }
 }
 .hero__music {
-  padding: 1rem;
-}
-.hero__music-import {
-  width: 60vw;
-  height: 10.375rem;
-}
-@media (min-width: 768px) {
-  .hero__music-import {
-    width: 50vh;
-  }
-}
-@media (min-width: 1280px) {
-  .hero__music-import {
-    width: 10vw;
-  }
+  padding: 1rem 1rem;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .hero__music {
-    padding-top: 2.25rem;
+    width: 100%;
+    padding-bottom: 2.25rem;
     padding-left: 2.25rem;
   }
 }
+.hero__music-import {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero__music-import {
+    width: 59%;
+  }
+}
 @media (min-width: 1280px) {
-  .hero__music {
-    padding: auto;
-    align-self: center;
+  .hero__music-import {
+    width: 85%;
+    padding-left: 3.75rem;
+    padding-top: 3.75rem;
   }
 }
 
 .musicians {
   padding: 0 1rem;
-  font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: Avenir-Next;
 }
 @media (min-width: 768px) {
   .musicians {
-    padding-left: 2.25rem;
-    font-size: 1.5rem;
+    padding: 0 2.25rem;
+    font-size: 0.875rem;
     line-height: 1.375rem;
     font-family: Avenir-Next;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians {
+    padding: 2.25rem 3.75rem;
   }
 }
 .musicians__header {
@@ -202,12 +229,6 @@
     line-height: 2rem;
     font-weight: 700;
     padding-top: 3rem;
-    padding-left: 2.25rem;
-  }
-}
-@media (min-width: 1280px) {
-  .musicians__header {
-    padding-left: auto;
   }
 }
 .musicians__image {
@@ -220,8 +241,7 @@
 }
 @media (min-width: 1280px) {
   .musicians__image {
-    padding-left: auto;
-    padding-right: auto;
+    padding: 2.25rem 3.75rem;
   }
 }
 .musicians__picture {
@@ -257,6 +277,11 @@
     padding: 0 2.25rem 2.25rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .musicians__info {
+    padding: 0 3.75rem;
+  }
+}
 .musicians__subheader {
   padding-bottom: 1rem;
   font-size: 0.875rem;
@@ -266,9 +291,10 @@
 @media (min-width: 768px) {
   .musicians__subheader {
     padding-left: 2.25rem;
+    color: #323232;
     font-size: 1.5rem;
-    line-height: 1.375rem;
-    font-family: Avenir-Next;
+    line-height: 2rem;
+    font-weight: 600;
   }
 }
 @media (min-width: 768px) {
@@ -277,13 +303,14 @@
     padding: 0 2.25rem;
   }
 }
-.musicians__main-text--bottom {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
 @media (min-width: 768px) {
   .musicians__main-text {
-    padding: 0 2.25rem 0 0;
+    padding-right: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .musicians__main-text {
+    padding-right: 1.5rem;
   }
 }
 
@@ -319,7 +346,6 @@
 @media (min-width: 768px) {
   .gallery__container {
     padding-bottom: 2.25rem;
-    padding-left: 2.25rem;
   }
 }
 .gallery__img {
@@ -330,7 +356,7 @@
 @media (min-width: 768px) {
   .gallery__img {
     width: 33%;
-    padding-right: 2.25rem;
+    padding-left: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -357,8 +383,7 @@
 }
 @media (min-width: 1280px) {
   .footer {
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding: auto;
   }
 }
 .footer__head {
@@ -369,6 +394,8 @@
     padding-top: 3rem;
     display: flex;
     justify-content: space-between;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -390,6 +417,8 @@
     visibility: visible;
     display: block;
     align-self: flex-start;
+    max-height: 1.25rem;
+    max-width: 7.5rem;
   }
 }
 .footer__header {
@@ -405,9 +434,7 @@
   }
 }
 .footer__contacts-container {
-  font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: Avenir-Next;
   color: white;
 }
 @media (min-width: 768px) {
@@ -415,6 +442,8 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 1rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
   }
 }
 .footer__contact {
@@ -440,6 +469,12 @@
 .footer__logo {
   padding-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .footer__logo {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
 .footer__mobile-logo {
   padding-top: 1.5rem;
   padding-bottom: 1rem;
@@ -451,21 +486,23 @@
   }
 }
 .footer__copyright {
-  padding-bottom: 1rem;
   color: white;
 }
 .comments {
   padding: 0 1rem;
-  font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-family: Avenir-Next;
 }
 @media (min-width: 768px) {
   .comments {
     padding: 0 2.25rem;
-    font-size: 1.5rem;
+    font-size: 0.875rem;
     line-height: 1.375rem;
     font-family: Avenir-Next;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    padding: 0 3.75rem;
   }
 }
 .comments__header {
@@ -486,11 +523,6 @@
     padding-left: 2.25rem;
   }
 }
-@media (min-width: 1280px) {
-  .comments__header {
-    padding-left: auto;
-  }
-}
 .comments__section {
   display: flex;
   justify-content: center;
@@ -501,12 +533,16 @@
     padding-left: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .comments__section {
+    padding: 0 3.75rem;
+  }
+}
 .comments__form {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 2.25rem;
-  padding: 0.75rem;
 }
 @media (min-width: 768px) {
   .comments__form {
@@ -518,6 +554,14 @@
   text-transform: uppercase;
   color: #afafaf;
   padding-bottom: 0.25rem;
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+}
+@media (min-width: 768px) {
+  .comments__form-label {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
 }
 .comments__form-name, .comments__form-comment {
   display: flex;
@@ -525,18 +569,21 @@
   padding-bottom: 1rem;
 }
 .comments__name, .comments__box {
-  width: 100%;
   border-radius: 0.25rem;
   padding: 0.75rem;
   border: 0.062rem solid #e1e1e1;
-  font-family: Avenir-Next;
-  font-size: 0.8125rem;
-  color: #000000;
+  font-family: inherit;
+  color: inherit;
   outline: none;
 }
+.comments__name {
+  height: 2.25rem;
+  width: 100%;
+}
 @media (min-width: 768px) {
-  .comments__name, .comments__box {
-    font-size: 1.5rem;
+  .comments__name {
+    height: 3rem;
+    padding: 1rem;
   }
 }
 .comments__name:focus, .comments__box:focus {
@@ -553,11 +600,19 @@
   max-width: 100%;
   border-radius: 0.25rem;
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: 0.625rem;
+  font-family: inherit;
+  font-weight: 700;
 }
 @media (min-width: 768px) {
   .comments__submit-btn {
-    font-size: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    width: 9.375rem;
+    min-width: 9.375rem;
+    padding: 0 2rem;
+    align-self: flex-end;
   }
 }
 .comments__submit-btn:hover {
@@ -570,6 +625,14 @@
   list-style-type: none;
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 1280px) {
+  .comments__list {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-family: Avenir-Next;
+    padding: 0 10rem;
+  }
 }
 .comments__list-item {
   padding-top: 1rem;
@@ -590,6 +653,11 @@
     padding-top: 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .comments__avatar-container {
+    padding-left: 3.75rem;
+  }
+}
 .comments__avatar {
   width: 6.25rem;
   height: 6.25rem;
@@ -597,8 +665,7 @@
   max-height: 3rem;
   background-color: #e1e1e1;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (min-width: 768px) {
   .comments__avatar {
@@ -606,9 +673,18 @@
     max-height: 3rem;
   }
 }
+.comments__avatar--new {
+  margin-left: 1rem;
+}
 .comments__info-container, .comments__form-container {
   width: 100%;
   padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 1280px) {
+  .comments__info-container, .comments__form-container {
+    padding-right: 3.75rem;
+  }
 }
 .comments__info {
   display: flex;
@@ -652,7 +728,7 @@
 }
 
 body {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
   font-family: Avenir-Next;
-  color: #323232;
-  font-size: 0.8125rem;
 }/*# sourceMappingURL=bio.css.map */

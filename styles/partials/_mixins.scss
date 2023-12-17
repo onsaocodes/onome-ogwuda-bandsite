@@ -12,6 +12,20 @@
   }
 }
 
+@mixin hero($url, $align-items) {
+  background: linear-gradient(
+      0deg,
+      rgba($color: $primary-color-black, $alpha: 0.5),
+      rgba($color: $primary-color-black, $alpha: 0.5)
+    ),
+    url($url);
+  background-size: cover;
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  align-items: $align-items;
+}
+
 @mixin mobile-header($color) {
   color: $color;
   font-size: $mobile-font-size-large;
@@ -26,9 +40,7 @@
 }
 
 @mixin mobile-body {
-  font-size: $mobile-font-size-small;
   line-height: $mobile-line-height-small;
-  font-family: $primary-font;
 }
 
 @mixin page-header($color) {
@@ -45,8 +57,15 @@
   font-weight: 700;
 }
 
-@mixin body {
+@mixin subheader {
+  color: $primary-color-black;
   font-size: $font-size-medium;
+  line-height: $line-height-large;
+  font-weight: 600;
+}
+
+@mixin body {
+  font-size: $font-size-small;
   line-height: $line-height-medium;
   font-family: $primary-font;
 }

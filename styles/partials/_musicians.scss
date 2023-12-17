@@ -6,8 +6,12 @@
   @include mobile-body;
 
   @include tablet {
-    padding-left: $padding-default;
+    padding: 0 $padding-default;
     @include body;
+  }
+
+  @include desktop {
+    padding: $padding-default 3.75rem;
   }
 
   &__header {
@@ -16,10 +20,6 @@
     @include tablet {
       @include section-header;
       padding-top: $padding-before-headlines;
-      padding-left: $padding-default;
-    }
-    @include desktop {
-      padding-left: auto;
     }
   }
 
@@ -29,8 +29,7 @@
       padding: $padding-default;
     }
     @include desktop {
-      padding-left: auto;
-      padding-right: auto;
+      padding: $padding-default 3.75rem;
     }
   }
 
@@ -64,6 +63,10 @@
     @include tablet {
       padding: 0 $padding-default $padding-default $padding-default;
     }
+
+    @include desktop {
+      padding: 0 3.75rem;
+    }
   }
 
   &__subheader {
@@ -71,7 +74,7 @@
     @include mobile-subheader;
     @include tablet {
       padding-left: $padding-default;
-      @include body;
+      @include subheader;
     }
   }
 
@@ -83,12 +86,12 @@
   }
 
   &__main-text {
-    &--bottom {
-      padding-top: $mobile-padding;
-      padding-bottom: $mobile-padding;
-    }
     @include tablet {
-      padding: 0 $padding-default 0 0;
+      padding-right: $padding-default;
+    }
+
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 }

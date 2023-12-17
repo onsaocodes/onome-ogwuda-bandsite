@@ -17,7 +17,8 @@
 
   @include desktop {
     display: flex;
-    justify-content: space-around;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 
   &__header {
@@ -29,8 +30,50 @@
       padding-bottom: $padding-default;
     }
     @include desktop {
-      padding-left: auto;
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
     }
+  }
+
+  &__section {
+    @include desktop {
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
+      width: 100%;
+    }
+  }
+
+  &__tablet-container {
+    @include tablet {
+      display: flex;
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
+    }
+  }
+
+  &__tablet-headings {
+    padding-top: $padding-before-headlines;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+
+    &--toHide {
+      visibility: hidden;
+      display: none;
+
+      @include tablet {
+        visibility: visible;
+        display: inherit;
+      }
+    }
+  }
+
+  &__tablet-date,
+  &__tablet-venue,
+  &__tablet-location {
+    width: 28.5%;
+    color: $secondary-color-silver;
   }
 
   &__subheaders {
@@ -49,7 +92,9 @@
       flex-direction: column;
     }
     @include desktop {
-      width: 60%;
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
+      width: 100%;
     }
   }
 
@@ -63,8 +108,19 @@
     }
 
     @include desktop {
-      justify-content: space-between;
     }
+
+    &--selected {
+      background-color: red;
+    }
+  }
+
+  &__list-item:focus {
+    background-color: $seconday-color-mercury;
+  }
+
+  &__list-item:hover {
+    background-color: $secondary-color-alabaster;
   }
 
   &__date-container,
@@ -78,16 +134,18 @@
     color: $secondary-color-silver;
     padding-bottom: 0.5rem;
 
-    &:nth-child(1) .shows__container-header {
-      display: block !important;
-      visibility: visible;
-      padding-bottom: $padding-default;
+    @include tablet {
+      &:nth-child(1) .shows__container-header {
+        display: block !important;
+        visibility: visible;
+        padding-bottom: $padding-default;
+      }
     }
 
     &--uppercase {
       text-transform: uppercase;
     }
-  
+
     &--toHide {
       @include tablet {
         visibility: hidden;
@@ -108,7 +166,6 @@
     max-width: 100%;
     border-radius: 0.25rem;
 
-    
     &:nth-child(1) .shows__button {
       margin-top: 3.5rem;
     }
