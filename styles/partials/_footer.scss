@@ -16,7 +16,8 @@
   }
 
   @include desktop {
-    padding: auto;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 
   &__head {
@@ -25,8 +26,6 @@
       padding-top: $padding-before-headlines;
       display: flex;
       justify-content: space-between;
-      padding-left: $padding-default;
-      padding-right: $padding-default;
     }
   }
 
@@ -60,6 +59,10 @@
     @include tablet {
       padding-right: $padding-default;
     }
+
+    @include desktop {
+      padding: 0 3.75rem;
+    }
   }
 
   &__contacts-container {
@@ -68,15 +71,18 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
-      padding-bottom: $mobile-padding;
-      padding-left: $padding-default;
-      padding-right: $padding-default;
+    }
+    @include desktop {
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
+      width: 67.5%;
     }
   }
 
   &__contact {
     padding-bottom: $mobile-padding;
     @include tablet {
+      padding-right: $padding-default;
     }
   }
 
@@ -105,10 +111,12 @@
 
   &__logo {
     padding-bottom: $mobile-padding;
-
     @include tablet {
-      padding-left: $padding-default;
-      padding-right: $padding-default;
+      padding-top: $padding-default;
+    }
+    @include desktop {
+      padding-left: 3.75rem;
+      padding-right: 3.75rem;
     }
   }
 
@@ -123,8 +131,5 @@
 
   &__copyright {
     color: $primary-color-white;
-    @include tablet {
-      // padding-left: $mobile-padding;
-    }
   }
 }

@@ -27,7 +27,6 @@
     @include tablet {
       @include section-header;
       padding-top: $padding-before-headlines;
-      padding-bottom: $padding-default;
     }
     @include desktop {
       padding-left: 3.75rem;
@@ -46,13 +45,16 @@
   &__tablet-container {
     @include tablet {
       display: flex;
+    }
+
+    @include desktop {
       padding-left: 3.75rem;
       padding-right: 3.75rem;
     }
   }
 
   &__tablet-headings {
-    padding-top: $padding-before-headlines;
+    padding-top: $padding-default;
 
     &--uppercase {
       text-transform: uppercase;
